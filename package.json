@@ -1,0 +1,23 @@
+{
+  "name": "ttt-php-ai",
+  "version": "1.0.0",
+  "description": "The repository contains an example AI application for demonstration/educational purpose.",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/user-event": "^14.6.1",
+    "jest": "^30.0.2",
+    "jest-environment-jsdom": "^30.0.2"
+  }
+}
