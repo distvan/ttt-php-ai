@@ -1,0 +1,43 @@
+# Compose specification
+
+# Define reusable configuration fragments
+x-php-service: &php-service
+  build:
+    context: ./docker/php
+  volumes:
+    # Exclude vendor directory (used internally by the app)
+    - .:/var/www/html
+    # If you want to avoid syncing the vendor directory, use "delegated" or implement volume filters:
+    # Example:
+    # - .:/var/www/slim_app:delegated
+
+services:
+  php:
+    <<: *php-service
+    container_name: php
+    ports:
+      - '9001:9000'
+    environment:
+      - APP_ENV=development
+    networks:
+      - app-network
+
+  nginx:
+    container_name: nginx
+    image: nginx:stable-alpine
+    ports:
+      - '8080:80'
+    volumes:
+      # Mount the app directory
+      - .:/var/www/html
+      # Mount custom Nginx config file
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+    environment:
+      - APP_ENV=development
+    networks:
+      - app-network
+
+networks:
+  app-network:
