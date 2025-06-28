@@ -8,6 +8,7 @@ use App\Domain\Contracts\Storage as StorageInterface;
 use App\Shared\Contracts\ServiceProvider;
 use App\Storage\SessionStorage;
 use Psr\Container\ContainerInterface;
+use App\Infrastructure\LoggerFactory;
 
 class StorageServiceProvider implements ServiceProvider
 {
@@ -16,7 +17,9 @@ class StorageServiceProvider implements ServiceProvider
         if (method_exists($container, 'bind')) {
             $container->bind(
                 StorageInterface::class,
-                SessionStorage::class
+                function () {
+                    return new SessionStorage(LoggerFactory::create());
+                }
             );
         }
     }

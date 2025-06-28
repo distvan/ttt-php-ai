@@ -4,7 +4,10 @@ use PHPUnit\Framework\TestCase;
 use App\Application\Services\AIAssistant;
 use App\Infrastructure\OpenAI\OpenAIClient;
 use App\Shared\InvalidMoveException;
+use Dotenv\Dotenv;
 
+$dotenv = Dotenv::createImmutable(dirname(__DIR__, 4));
+$dotenv->load();
 class AIAssistantTest extends TestCase
 {
     public function testSuggestMoveReturnsValidMove()
@@ -31,7 +34,7 @@ class AIAssistantTest extends TestCase
 
         $ai = new AIAssistant($mockClient);
 
-        $result = $ai->suggestMove($board);
+        $result = $ai->suggestMove($board, $_ENV['OPENAI_MODEL_NAME']);
 
         $this->assertIsArray($result);
         $this->assertSame(['row' => 2, 'col' => 0], $result);
@@ -61,6 +64,6 @@ class AIAssistantTest extends TestCase
         $this->expectException(InvalidMoveException::class);
         $this->expectExceptionMessage('Invalid move response from AI');
 
-        $ai->suggestMove($board);
+        $ai->suggestMove($board, $_ENV['OPENAI_MODEL_NAME']);
     }
 }

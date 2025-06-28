@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Storage;
 
 use App\Domain\Contracts\Storage;
+use Psr\Log\LoggerInterface;
 
 /**
  * SessionStorage
@@ -18,15 +19,18 @@ class SessionStorage implements Storage
      */
     private string $namespace;
 
+    private $logger;
+
     /**
      * Constructor
      *
      * @param string $namespace
      */
-    public function __construct(string $namespace = 'app_state')
+    public function __construct(LoggerInterface $logger, string $namespace = 'app_state')
     {
         $this->ensureSessionStarted();
         $this->namespace = $namespace;
+        $this->logger = $logger;
 
         if (!isset($_SESSION[$this->namespace])) {
             $_SESSION[$this->namespace] = [];
@@ -42,6 +46,9 @@ class SessionStorage implements Storage
     public function save(string $key, mixed $value): void
     {
         $_SESSION[$this->namespace][$key] = $value;
+        if ($_ENV['LOG_LEVEL'] == 'debug') {
+            $this->logger->debug('SessionStorage::save', ['key' => $key, 'value' => $value]);
+        }
     }
 
     /**

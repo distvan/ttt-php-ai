@@ -95,6 +95,9 @@ class BoardController
         } catch (InvalidArgumentException $e) {
             $result['success'] = false;
             $result['result'] = $e->getMessage();
+            $this->logger->error('Board::applyMove params:', ['inputRow' => $inputRow, 'inputCol' => $inputCol]);
+            $this->logger->error('BoardController::mark:', $result);
+            return JsonResponseFactory::create($result, 200);
         }
 
         //check winner
@@ -112,7 +115,9 @@ class BoardController
                 $move = $aiAssistant->suggestMove($this->board->getBoard(), $modelName);
                 $col = $move['col'] ?? '';
                 $row = $move['row'] ?? '';
-
+                if ($_ENV['LOG_LEVEL'] == 'debug') {
+                    $this->logger->debug('AIAssistant suggested move:', $move);
+                }
                 $this->board->applyMove($row, $col, 'O');
                 $this->storage->save('board-data', $this->board->getBoard());
                 $result['success'] = true;

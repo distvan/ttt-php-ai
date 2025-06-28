@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
 use App\Domain\Game\Board;
-use InvalidArgumentException;
 
 class BoardTest extends TestCase
 {
