@@ -8,9 +8,10 @@ export class TableController {
      * @param {Table} table 
      * @param {Notifier} notifier 
      */
-    constructor(table, notifier) {
+    constructor(table, notifier, statusBar) {
         this.table = table;
         this.notifier = notifier;
+        this.statusBar = statusBar
         table.on('cellClicked', (cell) => this.playerMove(cell));
         table.on('aiMove', (data) => this.aiMove(data));
     }
@@ -33,6 +34,7 @@ export class TableController {
         movingData.append("rowIndex", tdElement.dataset.row);
         movingData.append("colIndex", tdElement.dataset.col);
 
+        this.statusBar.showLoading();
         fetch(this.table.getTableApiUrl() + "/mark", {
             method: "POST",
             headers: {
@@ -42,9 +44,16 @@ export class TableController {
         })
         .then(response => response.json())
         .then(json => {
-            this.table.emit('aiMove', json.result);
-            if (json.winner !== "" && json.winner !== null) {
+            this.statusBar.hideLoading();
+            if (json.winner !== "" && json.winner !== null && json.gameover) {
                 this.notifier.show('The ' + json.winner + ' player win!');
+            } else if(!json.success) {
+                this.notifier.show('Error: ' + json.result);
+            } else if(json.gameover  && (json.winner == "" || json.winner == null)) {
+                this.notifier.show('The board is full! No winner.');
+            }
+            else {
+                this.table.emit('aiMove', json.result);
             }
         });
     }
@@ -56,7 +65,7 @@ export class TableController {
      * example: {col:1, row:1}
      */
     aiMove(data) {
-        const td = this.table.getCell(parseInt(data.col), parseInt(data.row));
+        const td = this.table.getCell(parseInt(data.row), parseInt(data.col));
         td.textContent='O';
     }
 
@@ -68,7 +77,7 @@ export class TableController {
      */
     highlightWinnerCells(cells) {
         cells.forEach(element => {
-            const td = this.table.getCell(parseInt(element.col), parseInt(element.row));
+            const td = this.table.getCell(parseInt(element.row), parseInt(element.col));
             td.style.backgroundColor = 'red';
         });
     }

@@ -5,12 +5,14 @@ import { jest } from '@jest/globals';
 import { Table } from '../../public/js/Table.js';
 import { TableController } from "../../public/js/TableController.js";
 import { Notifier } from "../../public/js/Notifier.js";
+import { StatusBar } from "../../public/js/StatusBar.js";
 import { screen, within } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';
 
 describe('Player move', () => {
     let tableObj;
     let tableController;
+    let statusBar;
 
     beforeEach(() => {
         global.fetch = jest.fn(() =>
@@ -18,10 +20,13 @@ describe('Player move', () => {
                 json: () => Promise.resolve([["", "", ""],["", "", ""],["", "", ""]])
             })
         );
-        document.body.innerHTML = '<div data-api-url="http://localhost:8080" id="tableContainer"></div>';
+        document.body.innerHTML = '<div id="statusBar">Waiting for AI response, please wait...</div>';
+        document.body.innerHTML += '<div id="overlay"></div>';
+        document.body.innerHTML += '<div data-api-url="http://localhost:8080" id="tableContainer"></div>';
         document.body.innerHTML += '<div id="notification-container"></div>';
+        statusBar = new StatusBar();
         tableObj = new Table(3, 3, 'tableContainer');
-        tableController = new TableController(tableObj, new Notifier('notification-container'))
+        tableController = new TableController(tableObj, new Notifier('notification-container'), statusBar);
     });
 
     it('clicks on a cell and marks as X and get AI answer', async () => {
