@@ -117,6 +117,8 @@ class BoardController
             } catch (InvalidMoveException | InvalidArgumentException $e) {
                 $result = BoardController::getResultValue(false, $e->getMessage());
             }
+        } else {
+            $result = BoardController::getResultValue(true, []);
         }
 
         return JsonResponseFactory::create($result, 200);
