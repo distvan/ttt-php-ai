@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Shared;
+namespace App\Shared\Exception;
 
 use Exception;
 
@@ -12,4 +12,5 @@ use Exception;
  * @package App\Shared
  */
 class FileNotFoundException extends Exception
-{}
+{
+}

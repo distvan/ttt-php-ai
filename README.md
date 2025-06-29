@@ -15,5 +15,5 @@ The game is played by two people who take turns marking on X or an O on a 3x3 gr
 The first person to mark three of their signs in a horizontal, vertical, or diagonal row is the winner.
 
 ## Testing
-For backend run: composer test
+For backend run: composer test \
 For frontend run: npm run test-win or npm run test-unix

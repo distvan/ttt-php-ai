@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Http\Client;
 
-use App\Shared\CurlException;
+use App\Shared\Exception\CurlException;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -78,10 +78,8 @@ class CurlHttpClient implements ClientInterface
             $errorMessage = $error ?: 'Unknown cURL error';
             $errorMessage .= "\nRequest URL: " . ($info['url'] ?? 'N/A');
             $errorMessage .= "\nHTTP Code: " . ($info['http_code'] ?? 'N/A');
-            
             throw new CurlException("cURL error: $errorMessage");
         }
-        
         $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $headerSize = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
         curl_close($ch);

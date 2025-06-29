@@ -17,7 +17,7 @@ class BoardTest extends TestCase
 
         $board = new Board();
         $board->setBoard($data);
-        
+
         $this->assertEquals('X', $board->getWinner());
     }
 
@@ -74,7 +74,7 @@ class BoardTest extends TestCase
         $board = new Board();
         $board->setBoard($data);
 
-        $this->assertNull($board->getWinner());
+        $this->assertEmpty($board->getWinner());
         $this->assertTrue($board->hasNoWinnerButBoardIsFull());
     }
 
@@ -89,7 +89,7 @@ class BoardTest extends TestCase
         $board = new Board();
         $board->setBoard($data);
 
-        $this->assertNull($board->getWinner());
+        $this->assertEmpty($board->getWinner());
         $this->assertFalse($board->hasNoWinnerButBoardIsFull());
     }
 
@@ -97,7 +97,7 @@ class BoardTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("Board must be square");
-        
+
         $data = [
             ['X', 'O', ''],
             ['O', 'X'],
@@ -112,7 +112,7 @@ class BoardTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("Board must be at least 3x3.");
-        
+
         $data = [
             ['X', 'O'],
             ['O', 'X']

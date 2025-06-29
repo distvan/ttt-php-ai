@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Shared;
+namespace App\Infrastructure\Exception;
 
 use RuntimeException;
 
@@ -11,4 +11,6 @@ use RuntimeException;
  *
  * @package App\Shared
  */
-class OpenAIException extends RuntimeException {}
+class OpenAIException extends RuntimeException
+{
+}

@@ -78,7 +78,7 @@ class SessionStorage implements Storage
      */
     public function exists(string $key): bool
     {
-        return array_key_exists($key,$_SESSION[$this->namespace]);
+        return array_key_exists($key, $_SESSION[$this->namespace]);
     }
 
     /**
@@ -92,7 +92,7 @@ class SessionStorage implements Storage
 
     /**
      * EnsureSessionStarted
-     * 
+     *
      */
     private function ensureSessionStarted(): void
     {

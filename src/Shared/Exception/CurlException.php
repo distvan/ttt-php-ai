@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Shared;
+namespace App\Shared\Exception;
 
 use RuntimeException;
 
@@ -13,4 +13,6 @@ use RuntimeException;
  * @author  Istvan Dobrentei <info@dobrenteiistvan.hu>
  * @link    https://www.en.dobrenteiistvan.hu
  */
-class CurlException extends RuntimeException {}
+class CurlException extends RuntimeException
+{
+}

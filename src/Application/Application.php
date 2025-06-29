@@ -9,9 +9,11 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
- * Application class
+ * Application Class
  *
  * @package App\Application
+ * @author  Istvan Dobrentei <info@dobrenteiistvan.hu>
+ * @link    https://www.en.dobrenteiistvan.hu
  */
 class Application
 {

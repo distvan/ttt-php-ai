@@ -3,7 +3,7 @@
 use PHPUnit\Framework\TestCase;
 use App\Application\Services\AIAssistant;
 use App\Infrastructure\OpenAI\OpenAIClient;
-use App\Shared\InvalidMoveException;
+use App\Shared\Exception\InvalidMoveException;
 use Dotenv\Dotenv;
 
 $dotenv = Dotenv::createImmutable(dirname(__DIR__, 4));
@@ -20,6 +20,7 @@ class AIAssistantTest extends TestCase
 
         $expectedJson = json_encode(['row' => 2, 'col' => 0]);
 
+        /** @var OpenAiClient | \PHPUnit\Framework\MockObject\MockObject $mockClient */
         $mockClient = $this->getMockBuilder(OpenAIClient::class)
             ->disableOriginalConstructor()
             ->onlyMethods(['chat'])
@@ -50,6 +51,7 @@ class AIAssistantTest extends TestCase
 
         $invalidResponse = '{"invalid": "data"}';
 
+        /** @var OpenAiClient | \PHPUnit\Framework\MockObject\MockObject $mockClient */
         $mockClient = $this->getMockBuilder(OpenAIClient::class)
             ->disableOriginalConstructor()
             ->onlyMethods(['chat'])

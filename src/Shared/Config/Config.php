@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Shared\Config;
 
-use App\Shared\ConfigException;
+use App\Shared\Exception\ConfigException;
 use UnexpectedValueException;
 
 /**
@@ -21,7 +21,8 @@ class Config
      *
      * @param string $basePath
      */
-    public function __construct(string $basePath) {
+    public function __construct(string $basePath)
+    {
         $this->basePath = rtrim($basePath, '/');
     }
 
@@ -30,9 +31,10 @@ class Config
      *
      * @param string $file
      */
-    public function get(string $file): array {
+    public function get(string $file): array
+    {
         $path = "{$this->basePath}/{$file}.php";
-        
+
         if (!file_exists($path)) {
             throw new ConfigException("Config file not found: $path");
         }
@@ -43,7 +45,6 @@ class Config
         if (!is_array($config)) {
             throw new UnexpectedValueException("Config file must return an array: $path");
         }
-        
         return $config;
     }
 }

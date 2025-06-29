@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Shared;
+namespace App\Shared\Exception;
 
 use Exception;
 
@@ -11,4 +11,6 @@ use Exception;
  *
  *  @package App\Shared
  */
-class ConfigException extends Exception {}
+class ConfigException extends Exception
+{
+}

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Shared;
+namespace App\Infrastructure\Exception;
 
 use Exception;
 use Psr\Container\NotFoundExceptionInterface;
@@ -10,7 +10,7 @@ use Psr\Container\NotFoundExceptionInterface;
 /**
  * NotFoundException
  *
- * @package App\Shared
+ * @package App\Infrastructure\Exception
  */
 class NotFoundException extends Exception implements NotFoundExceptionInterface
 {

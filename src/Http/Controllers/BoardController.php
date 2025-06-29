@@ -8,24 +8,30 @@ use App\Application\Contracts\AIAssistant;
 use App\Domain\Contracts\Storage;
 use App\Domain\Game\Board;
 use App\Shared\Http\JsonResponseFactory;
-use App\Shared\InvalidMoveException;
+use App\Shared\Exception\InvalidMoveException;
 use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
- * BoardController
+ * BoardController Class
  *
  * @package App\Http\Controllers
+ * @author  Istvan Dobrentei <info@dobrenteiistvan.hu>
+ * @link    https://www.en.dobrenteiistvan.hu
  */
 class BoardController
 {
+    private const PLAYER_MARK = 'X';
+    private const AI_MARK = 'O';
+
     /**
      * Constructor
      *
      * @param LoggerInterface $logger
-     * @param AIService $aiService
+     * @param Board $board
+     * @param Storage $storage
      */
     public function __construct(
         private LoggerInterface $logger,
@@ -36,6 +42,7 @@ class BoardController
 
     /**
      * __invoke
+     * Initialize the Game table or reloading the page and create an existing table again
      *
      * @param ServerRequestInterface $request
      */
@@ -77,9 +84,6 @@ class BoardController
      */
     public function mark(ServerRequestInterface $request, AIAssistant $aiAssistant): ResponseInterface
     {
-        $result['winner'] = "";
-        $result['gameover'] = false;
-
         //get parameters and validate it
         $inputCol = isset($request->getParsedBody()['colIndex']) ? (int)$request->getParsedBody()['colIndex'] : '';
         $inputRow = isset($request->getParsedBody()['rowIndex']) ? (int)$request->getParsedBody()['rowIndex'] : '';
@@ -88,28 +92,17 @@ class BoardController
         $this->board->setBoard($boardData);
 
         try {
-            $this->board->applyMove($inputRow, $inputCol, 'X');
+            $this->board->applyMove($inputRow, $inputCol, self::PLAYER_MARK);
             $this->storage->save('board-data', $this->board->getBoard());
-            $result['success'] = true;
-            $result['result'] = $this->board->getBoard();
         } catch (InvalidArgumentException $e) {
-            $result['success'] = false;
-            $result['result'] = $e->getMessage();
+            $result = BoardController::getResultValue(false, $e->getMessage());
             $this->logger->error('Board::applyMove params:', ['inputRow' => $inputRow, 'inputCol' => $inputCol]);
             $this->logger->error('BoardController::mark:', $result);
             return JsonResponseFactory::create($result, 200);
         }
 
-        //check winner
-        $result['winner'] = $this->board->getWinner();
-        if (empty($result['winner'])) {
-            $result['gameover'] = $this->board->isFull();
-        } else {
-            $result['gameover'] = true;
-        }
-
         //Ask AI assistant to make a sign
-        if (empty($result['winner']) && !$result['gameover']) {
+        if (empty($this->board->getWinner()) && !$this->board->isFull()) {
             $modelName = $_ENV['OPENAI_MODEL_NAME'] ?? "";
             try {
                 $move = $aiAssistant->suggestMove($this->board->getBoard(), $modelName);
@@ -118,27 +111,26 @@ class BoardController
                 if ($_ENV['LOG_LEVEL'] == 'debug') {
                     $this->logger->debug('AIAssistant suggested move:', $move);
                 }
-                $this->board->applyMove($row, $col, 'O');
+                $this->board->applyMove($row, $col, self::AI_MARK);
                 $this->storage->save('board-data', $this->board->getBoard());
-                $result['success'] = true;
-                $result['result']['col'] = $col;
-                $result['result']['row'] = $row;
-
-                //check winner
-                $result['winner'] = $this->board->getWinner();
-                if (empty($result['winner'])) {
-                    $result['gameover'] = $this->board->isFull();
-                } else {
-                    $result['gameover'] = true;
-                    //@Todo: implementing winner cells
-                    $result['winner_cells'] = "";
-                }
+                $result = BoardController::getResultValue(true, ['row' => $row, 'col' => $col]);
             } catch (InvalidMoveException | InvalidArgumentException $e) {
-                $result['success'] = false;
-                $result['result'] = $e->getMessage();
+                $result = BoardController::getResultValue(false, $e->getMessage());
             }
         }
 
         return JsonResponseFactory::create($result, 200);
+    }
+
+    private function getResultValue(bool $success, mixed $data): array
+    {
+        $winner = $this->board->getWinner();
+        return [
+            "success" => $success,
+            "result" => $data,
+            "gameover" => !empty($winner) || $this->board->isFull(),
+            "winner" => $winner,
+            "winner_cells" => "" //@todo implement returning the winner's cells
+        ];
     }
 }

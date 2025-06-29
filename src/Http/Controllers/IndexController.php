@@ -22,7 +22,8 @@ class IndexController
      */
     public function __construct(
         private View $view
-    ) {}
+    ) {
+    }
 
     /**
      * Init board

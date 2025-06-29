@@ -7,25 +7,35 @@ namespace App\Domain\Game;
 use InvalidArgumentException;
 
 /**
- * Board class
+ * Board Class
  *
- * @package App\Domain
+ * @package App\Domain\Game
+ * @author  Istvan Dobrentei <info@dobrenteiistvan.hu>
+ * @link    https://www.en.dobrenteiistvan.hu
  */
 class Board
 {
     private array $board = [];
     private int $size = 3;
 
-    public function createEmptyBoard(int $size=3): void
+    /**
+     * Create an empty board
+     *
+     * @param integer $size
+     * @return void
+     */
+    public function createEmptyBoard(int $size = 3): void
     {
-        for ($i=0; $i < $size; $i++) {
+        for ($i = 0; $i < $size; $i++) {
             $this->board[$i] = array_fill(0, $size, '');
         }
         $this->size = $size;
     }
 
     /**
-     * GetBoard
+     * Get board
+     *
+     * @return array
      */
     public function getBoard(): array
     {
@@ -37,9 +47,9 @@ class Board
      *
      * @param array $board
      */
-    public function setBoard(array $board):void
+    public function setBoard(array $board): void
     {
-        $this->validateBoard($board);
+        Board::validateBoard($board);
         $this->board = $board;
         $this->size = count($board);
     }
@@ -50,7 +60,7 @@ class Board
      * @param $board
      * @throws InvalidArgumentException
      */
-    public function  validateBoard(array $board): void
+    public static function validateBoard(array $board): void
     {
         $rowCount = count($board);
 
@@ -66,9 +76,11 @@ class Board
     }
 
     /**
-     * GetWinner
+     * getWinner
+     *
+     * @return string the winner's player sign (X,O or empty)
      */
-    public function getWinner(): ?string
+    public function getWinner(): string
     {
         $lines = array_merge(
             $this->board,
@@ -77,16 +89,18 @@ class Board
         );
 
         foreach ($lines as $line) {
-            if (!empty($line[0]) && $this->allEqual($line)) {
+            if (!empty($line[0]) && Board::allEqual($line)) {
                 return $line[0];
             }
         }
 
-        return null;
+        return "";
     }
 
     /**
-     * GetColumns
+     * getColumns
+     *
+     * @return array
      */
     private function getColumns(): array
     {
@@ -98,12 +112,14 @@ class Board
             }
             $columns[] = $column;
         }
-        
+
         return $columns;
     }
 
     /**
-     * GetDiagonals
+     * getDiagonals
+     *
+     * @return array
      */
     private function getDiagonals(): array
     {
@@ -122,22 +138,25 @@ class Board
      *
      * @param array $cells
      */
-    private function allEqual(array $cells): bool
+    private static function allEqual(array $cells): bool
     {
         return count(array_unique($cells)) === 1;
     }
 
     /**
-     * HasNoWinnerButBoardIsFull
+     * hasNoWinnerButBoardIsFull
      *
+     * @return boolean
      */
     public function hasNoWinnerButBoardIsFull(): bool
     {
-        return $this->getWinner() === null && $this->isFull();
+        return empty($this->getWinner()) && $this->isFull();
     }
 
     /**
-     * IsFull
+     * isFull
+     *
+     * @return boolean
      */
     public function isFull(): bool
     {
@@ -148,7 +167,7 @@ class Board
                 }
             }
         }
-        
+
         return true;
     }
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Shared;
 
+use App\Shared\Exception\FileNotFoundException;
 use Psr\Http\Message\ResponseInterface;
 use Nyholm\Psr7\Response;
 

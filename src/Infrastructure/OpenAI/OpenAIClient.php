@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Infrastructure\OpenAI;
 
 use App\Domain\Contracts\OpenAIClient as OpenAIClientInterface;
-use App\Shared\OpenAIException;
+use App\Infrastructure\Exception\OpenAIException;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
@@ -35,8 +35,7 @@ class OpenAIClient implements OpenAIClientInterface
         private StreamFactoryInterface $streamFactory,
         private string $apiKey,
         private string $baseUrl = 'https://openrouter.ai/api/v1/'
-    )
-    {
+    ) {
         $this->baseUrl = rtrim($baseUrl, '/') . '/';
     }
 
@@ -48,8 +47,11 @@ class OpenAIClient implements OpenAIClientInterface
      * @param float $temperature default value: 0.7
      * @return string
      */
-    public function chat(array $messages, string $model = 'deepseek/deepseek-chat-v3-0324:free', float $temperature = 0.7): string
-    {
+    public function chat(
+        array $messages,
+        string $model = 'deepseek/deepseek-chat-v3-0324:free',
+        float $temperature = 0.7
+    ): string {
         $payload = [
             'model' => $model,
             'messages' => $messages,

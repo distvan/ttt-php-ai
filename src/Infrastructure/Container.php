@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure;
 
-use App\Shared\NotFoundException;
+use App\Infrastructure\Exception\NotFoundException;
 use Psr\Container\ContainerInterface;
 use InvalidArgumentException;
 
@@ -26,7 +26,7 @@ class Container implements ContainerInterface
      */
     public function bind(string $id, string|callable $resolver): void
     {
-        if(is_string($resolver)) {
+        if (is_string($resolver)) {
             $resolver = function () use ($resolver) {
                 return new $resolver();
             };

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Shared;
+namespace App\Infrastructure\Exception;
 
 use Exception;
 
@@ -11,4 +11,6 @@ use Exception;
  *
  *  @package App\Shared
  */
-class KernelException extends Exception {}
+class KernelException extends Exception
+{
+}

@@ -2,6 +2,13 @@
 
 namespace App\Application\Contracts;
 
+/**
+ * AIAssistant Interface
+ *
+ * @package App\Application\Contracts
+ * @author  Istvan Dobrentei <info@dobrenteiistvan.hu>
+ * @link    https://www.en.dobrenteiistvan.hu
+ */
 interface AIAssistant
 {
     /**
