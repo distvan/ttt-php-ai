@@ -20,9 +20,6 @@ use Psr\Http\Message\ResponseFactoryInterface;
  */
 class CurlHttpClient implements ClientInterface
 {
-    private StreamFactoryInterface $streamFactory;
-    private ResponseFactoryInterface $responseFactory;
-
     /**
      * Constructor
      *
@@ -30,11 +27,9 @@ class CurlHttpClient implements ClientInterface
      * @param ResponseFactoryInterface $responseFactory
      */
     public function __construct(
-        StreamFactoryInterface $streamFactory,
-        ResponseFactoryInterface $responseFactory
+       private StreamFactoryInterface $streamFactory,
+       private ResponseFactoryInterface $responseFactory
     ) {
-        $this->streamFactory = $streamFactory;
-        $this->responseFactory = $responseFactory;
     }
 
     /**
