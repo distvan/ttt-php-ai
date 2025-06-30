@@ -1,5 +1,147 @@
 @startuml
-
-
-
+interface AIAssistantInterface {
++array suggestMove(board: array, model: string)
+}
+interface OpenAIClientInterface {
++string chat(messages: array, model: string, temperature: float)
+}
+interface StorageInterface {
++save(key: string, value: mixed)
++mixed load(key: string)
++delete(key: string)
++bool exists(key: string)
++clear()
+}
+interface ClientInterface {
++ResponseInterface sendRequest(request: RequestInterface)
+}
+interface ServiceProvider {
++void register(container: ContainerInterface)
+}
+interface ContainerInterface {
++mixed get(id: string)
++bool has(id: string)
+}
+interface RouterInterface {
++void add(method: string, path: string, handler: callable)
++callable match(request: ServerRequestInterface)
+}
+interface StreamFactoryInterface {}
+interface ResponseFactoryInterface {}
+class AIAssistant {
++AIAssistant(openAIClient: OpenAIClientInterface)
++array suggestMove(board: array, model: string)
+-array cleanJsonBlock(input: string)
+-string generateTicTacToePrompt(board: array)
+}
+class Application {
++Application(dispatcher: Dispatcher)
++void run(request: ServerRequestInterface)
+-void emit(response: ResponseInterface)
+}
+class Board {
++void createEmptyBoard(size: int)
++array getBoard()
++void setBoard(board: array)
++void validateBoard(board: array)
++string getWinner()
++void applyMove(row: int, col: int, player: string)
++bool hasNoWinnerButBoardIsFull()
++bool isFull()
+-array getColumns()
+-array getDiagonals()
+-bool allEqual(cells: array)
+-bool isValidMove(row: int, col: int)
+}
+class BoardController {
++BoardController(logger: LoggerInterface, board: Board, storage: StorageInterface)
++ResponseInterface __invoke(request: RequestIntreface)
++ResponseInterface mark(request: RequestInterface, aiAssistant: AIAssistantInterface)
+-array getResultValue(success: bool, data: mixed)
+}
+class IndexController {
++IndexController(view: View)
++ResponseInterface __invoke(request: ServerRequestInterface)
+}
+class KernelException {}
+class NotFoundException {}
+class OpenAIException {}
+class CurlHttpClient {
++CurlHttpClient(streamFactory: StreamFactoryInterface, responseFactory: ResponseFactoryInterface)
++ResponseInterface sendRequest(request: RequestInterface)
+}
+class Kernel {
++Kernel(container: Container, providers: array)
++Container getContainer()
++void registerProvider(providerClasses: array)
+}
+class OpenAIClient {
++OpenAIClient(httpClient: ClientInterface, requestFactory: RequestFactoryInterface, streamFactory: StreamFactoryInterface, apiKey: string, baseUrl: string)
++string chat(messages: array, model: string, temperature: float)
+-string parseResponse(response: ResponseInterface)
+}
+class AIAssistantServiceProvider {
++void register(container: ContainerInterface)
+}
+class AIClientServiceProvider {
++void register(container: ContainerInterface)
+}
+class StorageServiceProvider {
++void register(container: ContainerInterface)
+}
+class Container {
++void bind(id: string, resolver: callable|string)
++mixed get(id: string)
++bool has(id: string)
+}
+class Dispatcher {
++Dispatcher(router: RouterInterface)
++ResponseInterface handle(request: ServerRequestInterface)
+}
+class LoggerFactory {
++Logger create(channel: string)
+}
+class Route {
++Route(method: string, path: string, handler: callable)
++bool matches(request: ServerRequestInterface)
+}
+class Router {
++void add(method: string, path: string, handler: callable)
++callable match(request: serverRequestInterface)
+}
+class Config {
++Config(basePath: string)
++array get(file: string)
+}
+class ConfigException {}
+class ContainerException {}
+class CurlException {}
+class FileNotFoundException {}
+class InvalidMoveException {}
+class JsonResponseFactory {
++ResponseInterface create(data: array, status int, options: int)
+}
+class View {
++View(viewsPath: string, layoutsPath: string)
++ResponseInterface render(view: string, data: array, layout: string)
+-string replacePlaceholders(template: string, data: array)
+}
+class SessionStorage {
++SessionStorage(logger: LoggerInterface, namespace: string)
++void save(key: string, value: mixed)
++mixed load(key: string)
++void delete(key: string)
++void clear()
+-void ensureSessionStarted()
+}
+Dispatcher <.. Application : uses
+AIAssistantInterface <|.. AIAssistant
+OpenAIClientInterface <.. AIAssistant : uses
+LoggerInterface <.. BoardController : uses
+Board <.. BoardController : uses
+StorageInterface <.. BoardController : uses
+View <.. IndexController : uses
+ClientInterface <|.. CurlHttpClient
+StreamFactoryInterface <.. CurlHttpClient : uses
+ResponseFactoryInterface <.. CurlHttpClient : uses
 @enduml
