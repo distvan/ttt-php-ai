@@ -4,3 +4,5 @@
 src/Storage/Log
 vendor
 node_modules
+phpDocumentor.phar
+.phpdoc

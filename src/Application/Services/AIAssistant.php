@@ -3,7 +3,7 @@
 namespace App\Application\Services;
 
 use App\Application\Contracts\AIAssistant as AIAssistantInterface;
-use App\Infrastructure\OpenAI\OpenAIClient;
+use App\Domain\Contracts\OpenAIClient;
 use App\Shared\Exception\InvalidMoveException;
 
 /**

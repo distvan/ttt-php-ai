@@ -5,8 +5,8 @@ export class TableController {
     /**
      * Constructor
      *
-     * @param {Table} table 
-     * @param {Notifier} notifier 
+     * @param {Table} table
+     * @param {Notifier} notifier
      */
     constructor(table, notifier, statusBar) {
         this.table = table;
@@ -18,18 +18,16 @@ export class TableController {
 
     /**
      * Handle Player moving on the table
-     * and ask AI 
-     * 
-     * @param {HTMLElement} tdElement 
-     * @returns 
+     * and ask AI
+     *
+     * @param {HTMLElement} tdElement
+     * @returns
      */
     playerMove(tdElement) {
         if(tdElement.textContent !== '') {
             return;
         }
         tdElement.textContent='X';
-        this.notifier.show('It is AI turn now.');
-        
         const movingData = new URLSearchParams();
         movingData.append("rowIndex", tdElement.dataset.row);
         movingData.append("colIndex", tdElement.dataset.col);
@@ -46,7 +44,7 @@ export class TableController {
         .then(json => {
             this.statusBar.hideLoading();
             if (json.winner !== "" && json.winner !== null && json.gameover) {
-                this.notifier.show('The ' + json.winner + ' player win!');
+                this.notifier.show('The ' + json.winner + ' player won!');
             } else if(!json.success) {
                 this.notifier.show('Error: ' + json.result);
             } else if(json.gameover  && (json.winner == "" || json.winner == null)) {
@@ -60,8 +58,8 @@ export class TableController {
 
     /**
      * Put the AI move into the table using cell position
-     * 
-     * @param {json} data 
+     *
+     * @param {json} data
      * example: {col:1, row:1}
      */
     aiMove(data) {
@@ -71,8 +69,8 @@ export class TableController {
 
     /**
      * Highlight the winner cells in the table
-     * 
-     * @param {json} cells 
+     *
+     * @param {json} cells
      * for example: [{col:0,row:0}, {col:0,row:1}, {col:0,row:2}]
      */
     highlightWinnerCells(cells) {

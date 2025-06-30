@@ -1,12 +1,11 @@
 /**
  * @jest-environment jsdom
  */
-import { jest } from '@jest/globals';
+import { expect, jest } from '@jest/globals';
 import { Table } from '../../public/js/Table.js';
 import { TableController } from "../../public/js/TableController.js";
 import { Notifier } from "../../public/js/Notifier.js";
 import { StatusBar } from "../../public/js/StatusBar.js";
-import { screen, within } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';
 
 describe('Player move', () => {
@@ -40,12 +39,10 @@ describe('Player move', () => {
                 })
             })
         );
-        
         await tableObj.ready;
         const td = document.querySelector('td[data-row="2"][data-col="1"]');
         await userEvent.click(td);
         const player = tableObj.getCell(2, 1);
-        
         expect(player).toBeInstanceOf(HTMLTableCellElement);
         expect(player.tagName).toBe('TD');
         expect(player.textContent.trim()).toBe('X');
@@ -59,6 +56,46 @@ describe('Player move', () => {
     });
 
     it('shows who is the winner', async () => {
+        global.fetch = jest.fn(() =>
+            Promise.resolve({
+                json: () => Promise.resolve({
+                        "success": true,
+                        "result" : {"row":0, "col":0},
+                        "winner": "X",
+                        "gameover": true
+                })
+            })
+        );
+        await tableObj.ready;
+        let td = document.querySelector('td[data-row="1"][data-col="0"]');
+        await userEvent.click(td);
+        const containerDiv = document.getElementById('notification-container');
+        const notification = containerDiv. querySelector('.notification');
+        expect(containerDiv).not.toBeNull();
+        expect(notification).not.toBeNull();
+        expect(notification.textContent).toBe('The X player won!');
+        expect(global.fetch).toHaveBeenCalled();
+    });
 
+    it('shows the table is full and no winner', async () => {
+        global.fetch = jest.fn(() =>
+            Promise.resolve({
+                json: () => Promise.resolve({
+                        "success": true,
+                        "result" : {},
+                        "winner": "",
+                        "gameover": true
+                })
+            })
+        );
+        await tableObj.ready;
+        let td = document.querySelector('td[data-row="1"][data-col="0"]');
+        await userEvent.click(td);
+        const containerDiv = document.getElementById('notification-container');
+        const notification = containerDiv. querySelector('.notification');
+        expect(containerDiv).not.toBeNull();
+        expect(notification).not.toBeNull();
+        expect(notification.textContent).toBe('The board is full! No winner.');
+        expect(global.fetch).toHaveBeenCalled();
     });
 })
