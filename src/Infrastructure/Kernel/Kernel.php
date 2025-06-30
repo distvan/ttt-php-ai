@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Kernel;
 
-use App\Infrastructure\Container;
 use App\Infrastructure\Exception\KernelException;
 use App\Shared\Contracts\ServiceProvider;
+use Psr\Container\ContainerInterface;
 
 /**
  * Kernel
@@ -18,12 +18,12 @@ use App\Shared\Contracts\ServiceProvider;
 class Kernel
 {
     public function __construct(
-        protected Container $container,
+        protected ContainerInterface $container,
         protected array $providers = []
     ) {
     }
 
-    public function getContainer(): Container
+    public function getContainer(): ContainerInterface
     {
         return $this->container;
     }
