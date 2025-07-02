@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure;
+namespace App\Infrastructure\Http\Routing;
 
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
  * Route class
  *
- * @package App\Infrastructure
+ * @package App\Infrastructure\Http\Routing
  */
 class Route
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure;
+namespace App\Shared\Logging;
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -10,7 +10,7 @@ use Monolog\Handler\StreamHandler;
 /**
  * LoggerFactory Class
  *
- * @package App\Infrastructure
+ * @package App\Shared\Logging
  */
 class LoggerFactory
 {

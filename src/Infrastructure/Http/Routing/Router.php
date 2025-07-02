@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure;
+namespace App\Infrastructure\Http\Routing;
 
+use App\Infrastructure\Http\Contracts\RouterInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
@@ -11,7 +12,7 @@ use Psr\Http\Message\ServerRequestInterface;
  *
  * @package App\Infrastructure
  */
-class Router implements IRouter
+class Router implements RouterInterface
 {
     private array $routes = [];
 

@@ -27,8 +27,8 @@ class CurlHttpClient implements ClientInterface
      * @param ResponseFactoryInterface $responseFactory
      */
     public function __construct(
-       private StreamFactoryInterface $streamFactory,
-       private ResponseFactoryInterface $responseFactory
+        private StreamFactoryInterface $streamFactory,
+        private ResponseFactoryInterface $responseFactory
     ) {
     }
 

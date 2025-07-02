@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Infrastructure;
+namespace App\Infrastructure\Http\Contracts;
 
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
- * Interface IRouter
+ * RouterInterface
  *
- * @package App\Infrastructure
+ * @package App\Infrastructure\Http\Contracts
  * @author  Istvan Dobrentei <info@dobrenteiistvan.hu>
  * @link    https://www.en.dobrenteiistvan.hu
  */
-interface IRouter
+interface RouterInterface
 {
     /**
      * Add

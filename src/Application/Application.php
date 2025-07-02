@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Application;
 
-use App\Infrastructure\Dispatcher;
+use App\Infrastructure\Http\Dispatcher;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 

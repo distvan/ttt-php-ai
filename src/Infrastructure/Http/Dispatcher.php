@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure;
+namespace App\Infrastructure\Http;
 
+use App\Infrastructure\Http\Contracts\RouterInterface;
 use Nyholm\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -11,7 +12,7 @@ use Psr\Http\Message\ServerRequestInterface;
 /**
  * Dispatcher class
  *
- * @package App\Infrastructure
+ * @package App\Infrastructure\Http
  */
 class Dispatcher
 {
@@ -20,10 +21,10 @@ class Dispatcher
     /**
      * Constructor
      *
-     * @param IRouter $router
+     * @param RouterInterface $router
      */
     public function __construct(
-        private IRouter $router
+        private RouterInterface $router
     ) {
     }
 

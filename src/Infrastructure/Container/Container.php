@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure;
+namespace App\Infrastructure\Container;
 
 use App\Infrastructure\Exception\NotFoundException;
 use Psr\Container\ContainerInterface;
@@ -11,7 +11,7 @@ use InvalidArgumentException;
 /**
  * Container class
  *
- * @package App\Infrastructure
+ * @package App\Infrastructure\Container
  */
 class Container implements ContainerInterface
 {
