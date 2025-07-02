@@ -27,6 +27,7 @@ interface RouterInterface {
 +callable match(request: ServerRequestInterface)
 }
 interface StreamFactoryInterface {}
+interface RequestFactoryInterface {}
 interface ResponseFactoryInterface {}
 class AIAssistant {
 +AIAssistant(openAIClient: OpenAIClientInterface)
@@ -144,4 +145,15 @@ View <.. IndexController : uses
 ClientInterface <|.. CurlHttpClient
 StreamFactoryInterface <.. CurlHttpClient : uses
 ResponseFactoryInterface <.. CurlHttpClient : uses
+ContainerInterface <.. Kernel : uses
+OpenAIClientInterface <|.. OpenAIClient
+ClientInterface <.. OpenAIClient : uses
+RequestFactoryInterface <.. OpenAIClient : uses
+StreamFactoryInterface <.. OpenAIClient : uses
+ServiceProvider <|.. AIAssistantServiceProvider
+ServiceProvider <|.. AIClientServiceProvider
+ServiceProvider <|.. StorageServiceProvider
+ContainerInterface <|.. Container
+RouterInterface <.. Dispatcher : uses
+
 @enduml
