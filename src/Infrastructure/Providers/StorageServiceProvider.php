@@ -8,7 +8,7 @@ use App\Domain\Contracts\Storage as StorageInterface;
 use App\Shared\Contracts\ServiceProvider;
 use App\Storage\SessionStorage;
 use Psr\Container\ContainerInterface;
-use App\Infrastructure\LoggerFactory;
+use App\Shared\Logging\LoggerFactory;
 
 class StorageServiceProvider implements ServiceProvider
 {
