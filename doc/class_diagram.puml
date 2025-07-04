@@ -67,8 +67,18 @@ class IndexController {
 class KernelException {}
 class NotFoundException {}
 class OpenAIException {}
+class CurlExecutor {
++string execute(options: array)
+}
+class CurlRequestOptionsBuilder {
++array build(request: RequestInterface)
+}
+class CurlResponseParser {
++CurlResponseParser(responseFactory: ResponseFactoryInterface, streamFactory: StreamFactoryInterface, executor: CurlExecutor)
++ResponseInterface parse(raw: string)
+}
 class CurlHttpClient {
-+CurlHttpClient(streamFactory: StreamFactoryInterface, responseFactory: ResponseFactoryInterface)
++CurlHttpClient(optionsBuilder: CurlRequestOptionsBuilder, executor: CurlExecutor, responseParser: CurlResponseParser)
 +ResponseInterface sendRequest(request: RequestInterface)
 }
 class Kernel {
@@ -135,25 +145,28 @@ class SessionStorage {
 +void clear()
 -void ensureSessionStarted()
 }
-Dispatcher <.. Application : uses
-AIAssistantInterface <|.. AIAssistant
-OpenAIClientInterface <.. AIAssistant : uses
-LoggerInterface <.. BoardController : uses
-Board <.. BoardController : uses
-StorageInterface <.. BoardController : uses
-View <.. IndexController : uses
-ClientInterface <|.. CurlHttpClient
-StreamFactoryInterface <.. CurlHttpClient : uses
-ResponseFactoryInterface <.. CurlHttpClient : uses
-ContainerInterface <.. Kernel : uses
-OpenAIClientInterface <|.. OpenAIClient
-ClientInterface <.. OpenAIClient : uses
-RequestFactoryInterface <.. OpenAIClient : uses
-StreamFactoryInterface <.. OpenAIClient : uses
-ServiceProvider <|.. AIAssistantServiceProvider
-ServiceProvider <|.. AIClientServiceProvider
-ServiceProvider <|.. StorageServiceProvider
-ContainerInterface <|.. Container
-RouterInterface <.. Dispatcher : uses
-
+Application --> Dispatcher : uses
+AIAssistant ..|> AIAssistantInterface
+AIAssistant --> OpenAIClientInterface : uses
+BoardController --> StorageInterface : uses
+BoardController --> Board : uses
+BoardController --> LoggerInterface : uses
+IndexController --> View : uses
+CurlHttpClient ..|> ClientInterface
+CurlHttpClient --> CurlRequestOptionsBuilder : uses
+CurlHttpClient --> CurlExecutor : uses
+CurlHttpClient --> CurlResponseParser : uses
+CurlResponseParser --> ResponseFactoryInterface : uses
+CurlResponseParser --> StreamFactoryInterface : uses
+CurlResponseParser --> CurlExecutor : uses
+Kernel --> ContainerInterface : uses
+OpenAIClient ..|> OpenAIClientInterface
+OpenAIClient --> ClientInterface : uses
+OpenAIClient --> RequestFactoryInterface : uses
+OpenAIClient --> StreamFactoryInterface : uses
+AIAssistantServiceProvider ..|> ServiceProvider
+AIClientServiceProvider ..|> ServiceProvider
+StorageServiceProvider ..|> ServiceProvider
+Container ..|> ContainerInterface
+Dispatcher --> RouterInterface : uses
 @enduml

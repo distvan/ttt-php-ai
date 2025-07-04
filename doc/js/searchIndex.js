@@ -251,60 +251,35 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Http-Controllers-IndexController.html#property_view"
         },                {
-            "fqsen": "\\App\\Infrastructure\\Container",
+            "fqsen": "\\App\\Infrastructure\\Container\\Container",
             "name": "Container",
             "summary": "Container\u0020class",
-            "url": "classes/App-Infrastructure-Container.html"
+            "url": "classes/App-Infrastructure-Container-Container.html"
         },                {
-            "fqsen": "\\App\\Infrastructure\\Container\u003A\u003Abind\u0028\u0029",
+            "fqsen": "\\App\\Infrastructure\\Container\\Container\u003A\u003Abind\u0028\u0029",
             "name": "bind",
             "summary": "Bind",
-            "url": "classes/App-Infrastructure-Container.html#method_bind"
+            "url": "classes/App-Infrastructure-Container-Container.html#method_bind"
         },                {
-            "fqsen": "\\App\\Infrastructure\\Container\u003A\u003Aget\u0028\u0029",
+            "fqsen": "\\App\\Infrastructure\\Container\\Container\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Get",
-            "url": "classes/App-Infrastructure-Container.html#method_get"
+            "url": "classes/App-Infrastructure-Container-Container.html#method_get"
         },                {
-            "fqsen": "\\App\\Infrastructure\\Container\u003A\u003Ahas\u0028\u0029",
+            "fqsen": "\\App\\Infrastructure\\Container\\Container\u003A\u003Ahas\u0028\u0029",
             "name": "has",
             "summary": "Has",
-            "url": "classes/App-Infrastructure-Container.html#method_has"
+            "url": "classes/App-Infrastructure-Container-Container.html#method_has"
         },                {
-            "fqsen": "\\App\\Infrastructure\\Container\u003A\u003A\u0024bindings",
+            "fqsen": "\\App\\Infrastructure\\Container\\Container\u003A\u003A\u0024bindings",
             "name": "bindings",
             "summary": "",
-            "url": "classes/App-Infrastructure-Container.html#property_bindings"
+            "url": "classes/App-Infrastructure-Container-Container.html#property_bindings"
         },                {
-            "fqsen": "\\App\\Infrastructure\\Container\u003A\u003A\u0024instances",
+            "fqsen": "\\App\\Infrastructure\\Container\\Container\u003A\u003A\u0024instances",
             "name": "instances",
             "summary": "",
-            "url": "classes/App-Infrastructure-Container.html#property_instances"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Dispatcher",
-            "name": "Dispatcher",
-            "summary": "Dispatcher\u0020class",
-            "url": "classes/App-Infrastructure-Dispatcher.html"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Dispatcher\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor",
-            "url": "classes/App-Infrastructure-Dispatcher.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Dispatcher\u003A\u003Ahandle\u0028\u0029",
-            "name": "handle",
-            "summary": "handle",
-            "url": "classes/App-Infrastructure-Dispatcher.html#method_handle"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Dispatcher\u003A\u003ANOT_FOUND",
-            "name": "NOT_FOUND",
-            "summary": "",
-            "url": "classes/App-Infrastructure-Dispatcher.html#constant_NOT_FOUND"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Dispatcher\u003A\u003A\u0024router",
-            "name": "router",
-            "summary": "",
-            "url": "classes/App-Infrastructure-Dispatcher.html#property_router"
+            "url": "classes/App-Infrastructure-Container-Container.html#property_instances"
         },                {
             "fqsen": "\\App\\Infrastructure\\Exception\\KernelException",
             "name": "KernelException",
@@ -321,45 +296,195 @@ Search.appendIndex(
             "summary": "OpenAIException",
             "url": "classes/App-Infrastructure-Exception-OpenAIException.html"
         },                {
-            "fqsen": "\\App\\Infrastructure\\Http\\Client\\CurlHttpClient",
-            "name": "CurlHttpClient",
-            "summary": "CurlHttpClient",
-            "url": "classes/App-Infrastructure-Http-Client-CurlHttpClient.html"
+            "fqsen": "\\App\\Infrastructure\\Http\\Contracts\\RouterInterface",
+            "name": "RouterInterface",
+            "summary": "RouterInterface",
+            "url": "classes/App-Infrastructure-Http-Contracts-RouterInterface.html"
         },                {
-            "fqsen": "\\App\\Infrastructure\\Http\\Client\\CurlHttpClient\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor",
-            "url": "classes/App-Infrastructure-Http-Client-CurlHttpClient.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Http\\Client\\CurlHttpClient\u003A\u003AsendRequest\u0028\u0029",
-            "name": "sendRequest",
-            "summary": "sendRequest",
-            "url": "classes/App-Infrastructure-Http-Client-CurlHttpClient.html#method_sendRequest"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Http\\Client\\CurlHttpClient\u003A\u003A\u0024streamFactory",
-            "name": "streamFactory",
-            "summary": "",
-            "url": "classes/App-Infrastructure-Http-Client-CurlHttpClient.html#property_streamFactory"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Http\\Client\\CurlHttpClient\u003A\u003A\u0024responseFactory",
-            "name": "responseFactory",
-            "summary": "",
-            "url": "classes/App-Infrastructure-Http-Client-CurlHttpClient.html#property_responseFactory"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\IRouter",
-            "name": "IRouter",
-            "summary": "Interface\u0020IRouter",
-            "url": "classes/App-Infrastructure-IRouter.html"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\IRouter\u003A\u003Aadd\u0028\u0029",
+            "fqsen": "\\App\\Infrastructure\\Http\\Contracts\\RouterInterface\u003A\u003Aadd\u0028\u0029",
             "name": "add",
             "summary": "Add",
-            "url": "classes/App-Infrastructure-IRouter.html#method_add"
+            "url": "classes/App-Infrastructure-Http-Contracts-RouterInterface.html#method_add"
         },                {
-            "fqsen": "\\App\\Infrastructure\\IRouter\u003A\u003Amatch\u0028\u0029",
+            "fqsen": "\\App\\Infrastructure\\Http\\Contracts\\RouterInterface\u003A\u003Amatch\u0028\u0029",
             "name": "match",
             "summary": "Match",
-            "url": "classes/App-Infrastructure-IRouter.html#method_match"
+            "url": "classes/App-Infrastructure-Http-Contracts-RouterInterface.html#method_match"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlExecutor",
+            "name": "CurlExecutor",
+            "summary": "CurlHttpClient",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlExecutor.html"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlExecutor\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "execute",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlExecutor.html#method_execute"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlExecutor\u003A\u003AgetStatusCode\u0028\u0029",
+            "name": "getStatusCode",
+            "summary": "getStatusCode",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlExecutor.html#method_getStatusCode"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlExecutor\u003A\u003AgetHeaderSize\u0028\u0029",
+            "name": "getHeaderSize",
+            "summary": "getHeaderSize",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlExecutor.html#method_getHeaderSize"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlExecutor\u003A\u003A\u0024statusCode",
+            "name": "statusCode",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlExecutor.html#property_statusCode"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlExecutor\u003A\u003A\u0024headerSize",
+            "name": "headerSize",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlExecutor.html#property_headerSize"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlHttpClient",
+            "name": "CurlHttpClient",
+            "summary": "CurlHttpClient",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlHttpClient.html"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlHttpClient\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlHttpClient.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlHttpClient\u003A\u003AsendRequest\u0028\u0029",
+            "name": "sendRequest",
+            "summary": "sendRequest",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlHttpClient.html#method_sendRequest"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlHttpClient\u003A\u003A\u0024optionsBuilder",
+            "name": "optionsBuilder",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlHttpClient.html#property_optionsBuilder"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlHttpClient\u003A\u003A\u0024executor",
+            "name": "executor",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlHttpClient.html#property_executor"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlHttpClient\u003A\u003A\u0024responseParser",
+            "name": "responseParser",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlHttpClient.html#property_responseParser"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlRequestOptionsBuilder",
+            "name": "CurlRequestOptionsBuilder",
+            "summary": "CurlHttpClient",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlRequestOptionsBuilder.html"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlRequestOptionsBuilder\u003A\u003Abuild\u0028\u0029",
+            "name": "build",
+            "summary": "build",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlRequestOptionsBuilder.html#method_build"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlResponseParser",
+            "name": "CurlResponseParser",
+            "summary": "CurlHttpClient",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlResponseParser.html"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlResponseParser\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlResponseParser\u003A\u003Aparse\u0028\u0029",
+            "name": "parse",
+            "summary": "parse",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#method_parse"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlResponseParser\u003A\u003A\u0024responseFactory",
+            "name": "responseFactory",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#property_responseFactory"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlResponseParser\u003A\u003A\u0024streamFactory",
+            "name": "streamFactory",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#property_streamFactory"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl\\CurlResponseParser\u003A\u003A\u0024executor",
+            "name": "executor",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#property_executor"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Dispatcher",
+            "name": "Dispatcher",
+            "summary": "Dispatcher\u0020class",
+            "url": "classes/App-Infrastructure-Http-Dispatcher.html"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Dispatcher\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor",
+            "url": "classes/App-Infrastructure-Http-Dispatcher.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Dispatcher\u003A\u003Ahandle\u0028\u0029",
+            "name": "handle",
+            "summary": "handle",
+            "url": "classes/App-Infrastructure-Http-Dispatcher.html#method_handle"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Dispatcher\u003A\u003ANOT_FOUND",
+            "name": "NOT_FOUND",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Http-Dispatcher.html#constant_NOT_FOUND"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Dispatcher\u003A\u003A\u0024router",
+            "name": "router",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Http-Dispatcher.html#property_router"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Routing\\Route",
+            "name": "Route",
+            "summary": "Route\u0020class",
+            "url": "classes/App-Infrastructure-Http-Routing-Route.html"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Routing\\Route\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor",
+            "url": "classes/App-Infrastructure-Http-Routing-Route.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Routing\\Route\u003A\u003Amatches\u0028\u0029",
+            "name": "matches",
+            "summary": "Matches",
+            "url": "classes/App-Infrastructure-Http-Routing-Route.html#method_matches"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Routing\\Route\u003A\u003A\u0024method",
+            "name": "method",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Http-Routing-Route.html#property_method"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Routing\\Route\u003A\u003A\u0024path",
+            "name": "path",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Http-Routing-Route.html#property_path"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Routing\\Route\u003A\u003A\u0024handler",
+            "name": "handler",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Http-Routing-Route.html#property_handler"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Routing\\Router",
+            "name": "Router",
+            "summary": "Router\u0020class",
+            "url": "classes/App-Infrastructure-Http-Routing-Router.html"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Routing\\Router\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "Add\u0020route",
+            "url": "classes/App-Infrastructure-Http-Routing-Router.html#method_add"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Routing\\Router\u003A\u003Amatch\u0028\u0029",
+            "name": "match",
+            "summary": "Match",
+            "url": "classes/App-Infrastructure-Http-Routing-Router.html#method_match"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Routing\\Router\u003A\u003A\u0024routes",
+            "name": "routes",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Http-Routing-Router.html#property_routes"
         },                {
             "fqsen": "\\App\\Infrastructure\\Kernel\\Kernel",
             "name": "Kernel",
@@ -390,16 +515,6 @@ Search.appendIndex(
             "name": "providers",
             "summary": "",
             "url": "classes/App-Infrastructure-Kernel-Kernel.html#property_providers"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\LoggerFactory",
-            "name": "LoggerFactory",
-            "summary": "LoggerFactory\u0020Class",
-            "url": "classes/App-Infrastructure-LoggerFactory.html"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\LoggerFactory\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
-            "summary": "Creata\u0020a\u0020logger\u0020instance",
-            "url": "classes/App-Infrastructure-LoggerFactory.html#method_create"
         },                {
             "fqsen": "\\App\\Infrastructure\\OpenAI\\OpenAIClient",
             "name": "OpenAIClient",
@@ -476,56 +591,6 @@ Search.appendIndex(
             "summary": "Register",
             "url": "classes/App-Infrastructure-Providers-StorageServiceProvider.html#method_register"
         },                {
-            "fqsen": "\\App\\Infrastructure\\Route",
-            "name": "Route",
-            "summary": "Route\u0020class",
-            "url": "classes/App-Infrastructure-Route.html"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Route\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor",
-            "url": "classes/App-Infrastructure-Route.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Route\u003A\u003Amatches\u0028\u0029",
-            "name": "matches",
-            "summary": "Matches",
-            "url": "classes/App-Infrastructure-Route.html#method_matches"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Route\u003A\u003A\u0024method",
-            "name": "method",
-            "summary": "",
-            "url": "classes/App-Infrastructure-Route.html#property_method"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Route\u003A\u003A\u0024path",
-            "name": "path",
-            "summary": "",
-            "url": "classes/App-Infrastructure-Route.html#property_path"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Route\u003A\u003A\u0024handler",
-            "name": "handler",
-            "summary": "",
-            "url": "classes/App-Infrastructure-Route.html#property_handler"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Router",
-            "name": "Router",
-            "summary": "Router\u0020class",
-            "url": "classes/App-Infrastructure-Router.html"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Router\u003A\u003Aadd\u0028\u0029",
-            "name": "add",
-            "summary": "Add\u0020route",
-            "url": "classes/App-Infrastructure-Router.html#method_add"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Router\u003A\u003Amatch\u0028\u0029",
-            "name": "match",
-            "summary": "Match",
-            "url": "classes/App-Infrastructure-Router.html#method_match"
-        },                {
-            "fqsen": "\\App\\Infrastructure\\Router\u003A\u003A\u0024routes",
-            "name": "routes",
-            "summary": "",
-            "url": "classes/App-Infrastructure-Router.html#property_routes"
-        },                {
             "fqsen": "\\App\\Shared\\Config\\Config",
             "name": "Config",
             "summary": "Config\u0020class",
@@ -590,6 +655,16 @@ Search.appendIndex(
             "name": "create",
             "summary": "Create",
             "url": "classes/App-Shared-Http-JsonResponseFactory.html#method_create"
+        },                {
+            "fqsen": "\\App\\Shared\\Logging\\LoggerFactory",
+            "name": "LoggerFactory",
+            "summary": "LoggerFactory\u0020Class",
+            "url": "classes/App-Shared-Logging-LoggerFactory.html"
+        },                {
+            "fqsen": "\\App\\Shared\\Logging\\LoggerFactory\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Creata\u0020a\u0020logger\u0020instance",
+            "url": "classes/App-Shared-Logging-LoggerFactory.html#method_create"
         },                {
             "fqsen": "\\App\\Shared\\View",
             "name": "View",
@@ -721,6 +796,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app-http.html"
         },                {
+            "fqsen": "\\App\\Infrastructure\\Container",
+            "name": "Container",
+            "summary": "",
+            "url": "namespaces/app-infrastructure-container.html"
+        },                {
             "fqsen": "\\App\\Infrastructure",
             "name": "Infrastructure",
             "summary": "",
@@ -731,15 +811,25 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app-infrastructure-exception.html"
         },                {
-            "fqsen": "\\App\\Infrastructure\\Http\\Client",
-            "name": "Client",
+            "fqsen": "\\App\\Infrastructure\\Http\\Contracts",
+            "name": "Contracts",
             "summary": "",
-            "url": "namespaces/app-infrastructure-http-client.html"
+            "url": "namespaces/app-infrastructure-http-contracts.html"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Curl",
+            "name": "Curl",
+            "summary": "",
+            "url": "namespaces/app-infrastructure-http-curl.html"
         },                {
             "fqsen": "\\App\\Infrastructure\\Http",
             "name": "Http",
             "summary": "",
             "url": "namespaces/app-infrastructure-http.html"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Http\\Routing",
+            "name": "Routing",
+            "summary": "",
+            "url": "namespaces/app-infrastructure-http-routing.html"
         },                {
             "fqsen": "\\App\\Infrastructure\\Kernel",
             "name": "Kernel",
@@ -780,6 +870,11 @@ Search.appendIndex(
             "name": "Http",
             "summary": "",
             "url": "namespaces/app-shared-http.html"
+        },                {
+            "fqsen": "\\App\\Shared\\Logging",
+            "name": "Logging",
+            "summary": "",
+            "url": "namespaces/app-shared-logging.html"
         },                {
             "fqsen": "\\App\\Storage",
             "name": "Storage",

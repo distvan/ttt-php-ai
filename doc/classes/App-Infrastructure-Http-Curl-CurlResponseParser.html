@@ -142,19 +142,23 @@
                                 <section>
                                         <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/app.html">App</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-application.html">Application</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-infrastructure.html">Infrastructure</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-infrastructure-http.html">Http</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-infrastructure-http-curl.html">Curl</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    Application
+    CurlResponseParser
 
     
             <div class="phpdocumentor-element__package">
             in package
             <ul class="phpdocumentor-breadcrumbs">
                                     <li class="phpdocumentor-breadcrumb"><a href="packages/App.html">App</a></li>
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/App-Application.html">Application</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/App-Infrastructure.html">Infrastructure</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/App-Infrastructure-Http.html">Http</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/App-Infrastructure-Http-Curl.html">Curl</a></li>
                             </ul>
         </div>
     
@@ -167,20 +171,20 @@
 </div>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Application/Application.php"><a href="files/src-application-application.html"><abbr title="src/Application/Application.php">Application.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Http/Curl/CurlResponseParser.php"><a href="files/src-infrastructure-http-curl-curlresponseparser.html"><abbr title="src/Infrastructure/Http/Curl/CurlResponseParser.php">CurlResponseParser.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Application Class</p>
+            <p class="phpdocumentor-summary">CurlHttpClient</p>
 
 
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/App-Application-Application.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -208,7 +212,7 @@
 
 <h3 id="toc">
     Table of Contents
-    <a href="classes/App-Application-Application.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -222,44 +226,49 @@
 
 <h4 id="toc-properties">
     Properties
-    <a href="classes/App-Application-Application.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/App-Application-Application.html#property_dispatcher">$dispatcher</a>
+    <a class="" href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#property_executor">$executor</a>
     <span>
-                        &nbsp;: <a href="classes/App-Infrastructure-Http-Dispatcher.html"><abbr title="\App\Infrastructure\Http\Dispatcher">Dispatcher</abbr></a>            </span>
+                        &nbsp;: <a href="classes/App-Infrastructure-Http-Curl-CurlExecutor.html"><abbr title="\App\Infrastructure\Http\Curl\CurlExecutor">CurlExecutor</abbr></a>            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#property_responseFactory">$responseFactory</a>
+    <span>
+                        &nbsp;: <abbr title="\Psr\Http\Message\ResponseFactoryInterface">ResponseFactoryInterface</abbr>            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#property_streamFactory">$streamFactory</a>
+    <span>
+                        &nbsp;: <abbr title="\Psr\Http\Message\StreamFactoryInterface">StreamFactoryInterface</abbr>            </span>
 </dt>
 
     </dl>
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/App-Application-Application.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Application-Application.html#method___construct">__construct()</a>
+    <a class="" href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 <dd>Constructor</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Application-Application.html#method_run">run()</a>
+    <a class="" href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#method_parse">parse()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: <abbr title="\Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>    </span>
 </dt>
-<dd>Run</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a class="" href="classes/App-Application-Application.html#method_emit">emit()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>emit</dd>
+<dd>parse</dd>
 
     </dl>
 
@@ -271,7 +280,7 @@
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/App-Application-Application.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -281,17 +290,17 @@
             -private
                                                                     "
 >
-    <h4 class="phpdocumentor-element__name" id="property_dispatcher">
-        $dispatcher
-        <a href="classes/App-Application-Application.html#property_dispatcher" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_executor">
+        $executor
+        <a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#property_executor" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                             </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Application/Application.php"><a href="files/src-application-application.html"><abbr title="src/Application/Application.php">Application.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Http/Curl/CurlResponseParser.php"><a href="files/src-infrastructure-http-curl-curlresponseparser.html"><abbr title="src/Infrastructure/Http/Curl/CurlResponseParser.php">CurlResponseParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
@@ -299,8 +308,84 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type"><a href="classes/App-Infrastructure-Http-Dispatcher.html"><abbr title="\App\Infrastructure\Http\Dispatcher">Dispatcher</abbr></a></span>
-    <span class="phpdocumentor-signature__name">$dispatcher</span>
+            <span class="phpdocumentor-signature__type"><a href="classes/App-Infrastructure-Http-Curl-CurlExecutor.html"><abbr title="\App\Infrastructure\Http\Curl\CurlExecutor">CurlExecutor</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$executor</span>
+    </code>
+
+    
+    
+    
+
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_responseFactory">
+        $responseFactory
+        <a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#property_responseFactory" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Http/Curl/CurlResponseParser.php"><a href="files/src-infrastructure-http-curl-curlresponseparser.html"><abbr title="src/Infrastructure/Http/Curl/CurlResponseParser.php">CurlResponseParser.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">28</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type"><abbr title="\Psr\Http\Message\ResponseFactoryInterface">ResponseFactoryInterface</abbr></span>
+    <span class="phpdocumentor-signature__name">$responseFactory</span>
+    </code>
+
+    
+    
+    
+
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_streamFactory">
+        $streamFactory
+        <a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#property_streamFactory" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Http/Curl/CurlResponseParser.php"><a href="files/src-infrastructure-http-curl-curlresponseparser.html"><abbr title="src/Infrastructure/Http/Curl/CurlResponseParser.php">CurlResponseParser.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">29</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type"><abbr title="\Psr\Http\Message\StreamFactoryInterface">StreamFactoryInterface</abbr></span>
+    <span class="phpdocumentor-signature__name">$streamFactory</span>
     </code>
 
     
@@ -317,7 +402,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/App-Application-Application.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -328,13 +413,13 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/App-Application-Application.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Application/Application.php"><a href="files/src-application-application.html"><abbr title="src/Application/Application.php">Application.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Http/Curl/CurlResponseParser.php"><a href="files/src-infrastructure-http-curl-curlresponseparser.html"><abbr title="src/Infrastructure/Http/Curl/CurlResponseParser.php">CurlResponseParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 
     </aside>
 
@@ -342,7 +427,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Infrastructure-Http-Dispatcher.html"><abbr title="\App\Infrastructure\Http\Dispatcher">Dispatcher</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dispatcher</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\ResponseFactoryInterface">ResponseFactoryInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$responseFactory</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\StreamFactoryInterface">StreamFactoryInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$streamFactory</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Infrastructure-Http-Curl-CurlExecutor.html"><abbr title="\App\Infrastructure\Http\Curl\CurlExecutor">CurlExecutor</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$executor</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -351,8 +436,22 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$dispatcher</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Infrastructure-Http-Dispatcher.html"><abbr title="\App\Infrastructure\Http\Dispatcher">Dispatcher</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$responseFactory</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\ResponseFactoryInterface">ResponseFactoryInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$streamFactory</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\StreamFactoryInterface">StreamFactoryInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$executor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Infrastructure-Http-Curl-CurlExecutor.html"><abbr title="\App\Infrastructure\Http\Curl\CurlExecutor">CurlExecutor</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -371,23 +470,23 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_run">
-        run()
-        <a href="classes/App-Application-Application.html#method_run" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_parse">
+        parse()
+        <a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#method_parse" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Application/Application.php"><a href="files/src-application-application.html"><abbr title="src/Application/Application.php">Application.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Http/Curl/CurlResponseParser.php"><a href="files/src-infrastructure-http-curl-curlresponseparser.html"><abbr title="src/Infrastructure/Http/Curl/CurlResponseParser.php">CurlResponseParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">35</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Run</p>
+        <p class="phpdocumentor-summary">parse</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">run</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\ServerRequestInterface">ServerRequestInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">parse</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$raw</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Psr\Http\Message\ResponseInterface">ResponseInterface</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -396,8 +495,8 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\ServerRequestInterface">ServerRequestInterface</abbr></span>
+                <span class="phpdocumentor-signature__argument__name">$raw</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -408,52 +507,11 @@
 
     
 
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_emit">
-        emit()
-        <a href="classes/App-Application-Application.html#method_emit" class="headerlink"><i class="fas fa-link"></i></a>
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Psr\Http\Message\ResponseInterface">ResponseInterface</abbr></span>
+            </section>
 
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Application/Application.php"><a href="files/src-application-application.html"><abbr title="src/Application/Application.php">Application.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">45</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">emit</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">emit</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$response</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$response</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\ResponseInterface">ResponseInterface</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-    
-
-    
 </article>
             </section>
 
@@ -461,7 +519,7 @@
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Application/Application.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Infrastructure/Http/Curl/CurlResponseParser.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -560,24 +618,25 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                                            <li><a href="classes/App-Application-Application.html#toc-properties">Properties</a></li>
-                                                            <li><a href="classes/App-Application-Application.html#toc-methods">Methods</a></li>
+                                                            <li><a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
             
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/App-Application-Application.html#property_dispatcher">$dispatcher</a></li>
+                                                    <li class=""><a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#property_executor">$executor</a></li>
+                                                    <li class=""><a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#property_responseFactory">$responseFactory</a></li>
+                                                    <li class=""><a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#property_streamFactory">$streamFactory</a></li>
                                             </ul>
                 </li>
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li class=""><a href="classes/App-Application-Application.html#method___construct">__construct()</a></li>
-                                            <li class=""><a href="classes/App-Application-Application.html#method_run">run()</a></li>
-                                            <li class=""><a href="classes/App-Application-Application.html#method_emit">emit()</a></li>
+                                            <li class=""><a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#method___construct">__construct()</a></li>
+                                            <li class=""><a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#method_parse">parse()</a></li>
                                     </ul>
             </li>
                     </ul>
@@ -597,7 +656,7 @@
     </section>
 </section>
         </div>
-        <a href="classes/App-Application-Application.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/App-Infrastructure-Http-Curl-CurlResponseParser.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

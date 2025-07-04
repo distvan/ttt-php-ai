@@ -143,24 +143,23 @@
                                         <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/app.html">App</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-infrastructure.html">Infrastructure</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-infrastructure-providers.html">Providers</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-infrastructure-http.html">Http</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    AIAssistantServiceProvider
+    Dispatcher
 
     
             <div class="phpdocumentor-element__package">
             in package
             <ul class="phpdocumentor-breadcrumbs">
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/Application.html">Application</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/App.html">App</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/App-Infrastructure.html">Infrastructure</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/App-Infrastructure-Http.html">Http</a></li>
                             </ul>
         </div>
     
-            <span class="phpdocumentor-element__implements">
-            implements
-                            <a href="classes/App-Shared-Contracts-ServiceProvider.html"><abbr title="\App\Shared\Contracts\ServiceProvider">ServiceProvider</abbr></a>                    </span>
     
     </h2>
 
@@ -170,13 +169,14 @@
 </div>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Providers/AIAssistantServiceProvider.php"><a href="files/src-infrastructure-providers-aiassistantserviceprovider.html"><abbr title="src/Infrastructure/Providers/AIAssistantServiceProvider.php">AIAssistantServiceProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Http/Dispatcher.php"><a href="files/src-infrastructure-http-dispatcher.html"><abbr title="src/Infrastructure/Http/Dispatcher.php">Dispatcher.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
-        
+            <p class="phpdocumentor-summary">Dispatcher class</p>
+
 
 
 
@@ -187,51 +187,160 @@
 
 <h3 id="toc">
     Table of Contents
-    <a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Infrastructure-Http-Dispatcher.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
 
 
-    <h4 id="toc-interfaces">
-        Interfaces
-        <a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#toc-interfaces" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/App-Shared-Contracts-ServiceProvider.html"><abbr title="\App\Shared\Contracts\ServiceProvider">ServiceProvider</abbr></a></dt><dd>ServiceProvider Interface</dd>    </dl>
 
 
 
 
+<h4 id="toc-constants">
+    Constants
+    <a href="classes/App-Infrastructure-Http-Dispatcher.html#toc-constants" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
+    <a class="" href="classes/App-Infrastructure-Http-Dispatcher.html#constant_NOT_FOUND">NOT_FOUND</a>
+    <span>
+        &nbsp;= 404                            </span>
+</dt>
+
+    </dl>
 
 
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/App-Infrastructure-Http-Dispatcher.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/App-Infrastructure-Http-Dispatcher.html#property_router">$router</a>
+    <span>
+                        &nbsp;: <a href="classes/App-Infrastructure-Http-Contracts-RouterInterface.html"><abbr title="\App\Infrastructure\Http\Contracts\RouterInterface">RouterInterface</abbr></a>            </span>
+</dt>
+
+    </dl>
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Infrastructure-Http-Dispatcher.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#method_register">register()</a>
+    <a class="" href="classes/App-Infrastructure-Http-Dispatcher.html#method___construct">__construct()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: mixed    </span>
 </dt>
-<dd>Register</dd>
+<dd>Constructor</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Infrastructure-Http-Dispatcher.html#method_handle">handle()</a>
+    <span>
+                                &nbsp;: <abbr title="\Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>    </span>
+</dt>
+<dd>handle</dd>
 
     </dl>
 
 
 
         
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="classes/App-Infrastructure-Http-Dispatcher.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h3>
+                    <article class="phpdocumentor-element -constant -private ">
+    <h4 class="phpdocumentor-element__name" id="constant_NOT_FOUND">
+        NOT_FOUND
+        <a href="classes/App-Infrastructure-Http-Dispatcher.html#constant_NOT_FOUND" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Http/Dispatcher.php"><a href="files/src-infrastructure-http-dispatcher.html"><abbr title="src/Infrastructure/Http/Dispatcher.php">Dispatcher.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">19</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">NOT_FOUND</span>
+    = <span class="phpdocumentor-signature__default-value">404</span>
+</code>
+
+
+    
+    
+    
+
+    
+
+</article>
+            </section>
 
         
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/App-Infrastructure-Http-Dispatcher.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_router">
+        $router
+        <a href="classes/App-Infrastructure-Http-Dispatcher.html#property_router" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Http/Dispatcher.php"><a href="files/src-infrastructure-http-dispatcher.html"><abbr title="src/Infrastructure/Http/Dispatcher.php">Dispatcher.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">27</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type"><a href="classes/App-Infrastructure-Http-Contracts-RouterInterface.html"><abbr title="\App\Infrastructure\Http\Contracts\RouterInterface">RouterInterface</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$router</span>
+    </code>
+
+    
+    
+    
+
+    
+
+    
+
+</article>
+            </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/App-Infrastructure-Http-Dispatcher.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -240,23 +349,23 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_register">
-        register()
-        <a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#method_register" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="classes/App-Infrastructure-Http-Dispatcher.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Providers/AIAssistantServiceProvider.php"><a href="files/src-infrastructure-providers-aiassistantserviceprovider.html"><abbr title="src/Infrastructure/Providers/AIAssistantServiceProvider.php">AIAssistantServiceProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Http/Dispatcher.php"><a href="files/src-infrastructure-http-dispatcher.html"><abbr title="src/Infrastructure/Http/Dispatcher.php">Dispatcher.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Register</p>
+        <p class="phpdocumentor-summary">Constructor</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">register</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Container\ContainerInterface">ContainerInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$container</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Infrastructure-Http-Contracts-RouterInterface.html"><abbr title="\App\Infrastructure\Http\Contracts\RouterInterface">RouterInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$router</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -265,8 +374,8 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$container</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Container\ContainerInterface">ContainerInterface</abbr></span>
+                <span class="phpdocumentor-signature__argument__name">$router</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Infrastructure-Http-Contracts-RouterInterface.html"><abbr title="\App\Infrastructure\Http\Contracts\RouterInterface">RouterInterface</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -279,13 +388,62 @@
 
     
 </article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_handle">
+        handle()
+        <a href="classes/App-Infrastructure-Http-Dispatcher.html#method_handle" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Http/Dispatcher.php"><a href="files/src-infrastructure-http-dispatcher.html"><abbr title="src/Infrastructure/Http/Dispatcher.php">Dispatcher.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">37</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">handle</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">handle</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\ServerRequestInterface">ServerRequestInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Psr\Http\Message\ResponseInterface">ResponseInterface</abbr></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$request</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\ServerRequestInterface">ServerRequestInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Psr\Http\Message\ResponseInterface">ResponseInterface</abbr></span>
+            </section>
+
+</article>
             </section>
 
         <div class="phpdocumentor-modal" id="source-view">
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Infrastructure/Providers/AIAssistantServiceProvider.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Infrastructure/Http/Dispatcher.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -384,15 +542,30 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                                                                <li><a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#toc-methods">Methods</a></li>
+                                        <li><a href="classes/App-Infrastructure-Http-Dispatcher.html#toc-constants">Constants</a></li>
+                                                            <li><a href="classes/App-Infrastructure-Http-Dispatcher.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/App-Infrastructure-Http-Dispatcher.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
+                            <li class="phpdocumentor-on-this-page-section__title">Constants</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li class=""><a href="classes/App-Infrastructure-Http-Dispatcher.html#constant_NOT_FOUND">NOT_FOUND</a></li>
+                                            </ul>
+                </li>
             
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li class=""><a href="classes/App-Infrastructure-Http-Dispatcher.html#property_router">$router</a></li>
+                                            </ul>
+                </li>
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li class=""><a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#method_register">register()</a></li>
+                                            <li class=""><a href="classes/App-Infrastructure-Http-Dispatcher.html#method___construct">__construct()</a></li>
+                                            <li class=""><a href="classes/App-Infrastructure-Http-Dispatcher.html#method_handle">handle()</a></li>
                                     </ul>
             </li>
                     </ul>
@@ -412,7 +585,7 @@
     </section>
 </section>
         </div>
-        <a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/App-Infrastructure-Http-Dispatcher.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
