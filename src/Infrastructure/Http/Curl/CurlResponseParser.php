@@ -28,7 +28,7 @@ class CurlResponseParser
         private ResponseFactoryInterface $responseFactory,
         private StreamFactoryInterface $streamFactory,
         private CurlExecutor $executor
-    ){
+    ) {
     }
 
     /**
