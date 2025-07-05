@@ -56,10 +56,10 @@ Search.appendIndex(
             "summary": "cleanJsonBlock\nclean\u0020the\u0020AI\u0020response\u0020and\u0020decode\u0020it\u0020from\u0020json",
             "url": "classes/App-Application-Services-AIAssistant.html#method_cleanJsonBlock"
         },                {
-            "fqsen": "\\App\\Application\\Services\\AIAssistant\u003A\u003AgenerateTicTacToePrompt\u0028\u0029",
-            "name": "generateTicTacToePrompt",
+            "fqsen": "\\App\\Application\\Services\\AIAssistant\u003A\u003AgeneratePrompt\u0028\u0029",
+            "name": "generatePrompt",
             "summary": "GenerateTicTacToePrompt\nProvide\u0020a\u0020prompt\u0020for\u0020the\u0020AI\u0020assistant",
-            "url": "classes/App-Application-Services-AIAssistant.html#method_generateTicTacToePrompt"
+            "url": "classes/App-Application-Services-AIAssistant.html#method_generatePrompt"
         },                {
             "fqsen": "\\App\\Application\\Services\\AIAssistant\u003A\u003A\u0024openAIClient",
             "name": "openAIClient",
@@ -516,6 +516,31 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Infrastructure-Kernel-Kernel.html#property_providers"
         },                {
+            "fqsen": "\\App\\Infrastructure\\Minimax\\MinimaxAssistant",
+            "name": "MinimaxAssistant",
+            "summary": "MinimaxAssistant\u0020class",
+            "url": "classes/App-Infrastructure-Minimax-MinimaxAssistant.html"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Minimax\\MinimaxAssistant\u003A\u003AsuggestMove\u0028\u0029",
+            "name": "suggestMove",
+            "summary": "suggestMove\ncalculate\u0020the\u0020best\u0020movement\u0020using\u0020minimax\u0020algorithm\u0020and\u0020return\u0020the\u0020suggestion",
+            "url": "classes/App-Infrastructure-Minimax-MinimaxAssistant.html#method_suggestMove"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Minimax\\MinimaxAssistant\u003A\u003Aminimax\u0028\u0029",
+            "name": "minimax",
+            "summary": "minimax",
+            "url": "classes/App-Infrastructure-Minimax-MinimaxAssistant.html#method_minimax"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Minimax\\MinimaxAssistant\u003A\u003AAI_PLAYER",
+            "name": "AI_PLAYER",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Minimax-MinimaxAssistant.html#constant_AI_PLAYER"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Minimax\\MinimaxAssistant\u003A\u003AHUMAN_PLAYER",
+            "name": "HUMAN_PLAYER",
+            "summary": "",
+            "url": "classes/App-Infrastructure-Minimax-MinimaxAssistant.html#constant_HUMAN_PLAYER"
+        },                {
             "fqsen": "\\App\\Infrastructure\\OpenAI\\OpenAIClient",
             "name": "OpenAIClient",
             "summary": "OpenAIClient",
@@ -835,6 +860,11 @@ Search.appendIndex(
             "name": "Kernel",
             "summary": "",
             "url": "namespaces/app-infrastructure-kernel.html"
+        },                {
+            "fqsen": "\\App\\Infrastructure\\Minimax",
+            "name": "Minimax",
+            "summary": "",
+            "url": "namespaces/app-infrastructure-minimax.html"
         },                {
             "fqsen": "\\App\\Infrastructure\\OpenAI",
             "name": "OpenAI",

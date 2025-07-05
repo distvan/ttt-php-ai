@@ -143,12 +143,12 @@
                                         <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/app.html">App</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-infrastructure.html">Infrastructure</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-infrastructure-providers.html">Providers</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-infrastructure-minimax.html">Minimax</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    AIAssistantServiceProvider
+    MinimaxAssistant
 
     
             <div class="phpdocumentor-element__package">
@@ -160,7 +160,7 @@
     
             <span class="phpdocumentor-element__implements">
             implements
-                            <a href="classes/App-Shared-Contracts-ServiceProvider.html"><abbr title="\App\Shared\Contracts\ServiceProvider">ServiceProvider</abbr></a>                    </span>
+                            <a href="classes/App-Application-Contracts-AIAssistant.html"><abbr title="\App\Application\Contracts\AIAssistant">AIAssistant</abbr></a>                    </span>
     
     </h2>
 
@@ -170,13 +170,14 @@
 </div>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Providers/AIAssistantServiceProvider.php"><a href="files/src-infrastructure-providers-aiassistantserviceprovider.html"><abbr title="src/Infrastructure/Providers/AIAssistantServiceProvider.php">AIAssistantServiceProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Minimax/MinimaxAssistant.php"><a href="files/src-infrastructure-minimax-minimaxassistant.html"><abbr title="src/Infrastructure/Minimax/MinimaxAssistant.php">MinimaxAssistant.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
-        
+            <p class="phpdocumentor-summary">MinimaxAssistant class</p>
+
 
 
 
@@ -187,7 +188,7 @@
 
 <h3 id="toc">
     Table of Contents
-    <a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -195,43 +196,139 @@
 
     <h4 id="toc-interfaces">
         Interfaces
-        <a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#toc-interfaces" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#toc-interfaces" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/App-Shared-Contracts-ServiceProvider.html"><abbr title="\App\Shared\Contracts\ServiceProvider">ServiceProvider</abbr></a></dt><dd>ServiceProvider Interface</dd>    </dl>
+                    <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/App-Application-Contracts-AIAssistant.html"><abbr title="\App\Application\Contracts\AIAssistant">AIAssistant</abbr></a></dt><dd>AIAssistant Interface</dd>    </dl>
 
 
 
 
+<h4 id="toc-constants">
+    Constants
+    <a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#toc-constants" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
+    <a class="" href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#constant_AI_PLAYER">AI_PLAYER</a>
+    <span>
+        &nbsp;= &#039;O&#039;                            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
+    <a class="" href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#constant_HUMAN_PLAYER">HUMAN_PLAYER</a>
+    <span>
+        &nbsp;= &#039;X&#039;                            </span>
+</dt>
+
+    </dl>
 
 
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#method_register">register()</a>
+    <a class="" href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#method_suggestMove">suggestMove()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Register</dd>
+<dd>suggestMove
+calculate the best movement using minimax algorithm and return the suggestion</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#method_minimax">minimax()</a>
+    <span>
+                                &nbsp;: int    </span>
+</dt>
+<dd>minimax</dd>
 
     </dl>
 
 
 
         
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h3>
+                    <article class="phpdocumentor-element -constant -private ">
+    <h4 class="phpdocumentor-element__name" id="constant_AI_PLAYER">
+        AI_PLAYER
+        <a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#constant_AI_PLAYER" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Minimax/MinimaxAssistant.php"><a href="files/src-infrastructure-minimax-minimaxassistant.html"><abbr title="src/Infrastructure/Minimax/MinimaxAssistant.php">MinimaxAssistant.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">15</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">AI_PLAYER</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;O&#039;</span>
+</code>
+
+
+    
+    
+    
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -private ">
+    <h4 class="phpdocumentor-element__name" id="constant_HUMAN_PLAYER">
+        HUMAN_PLAYER
+        <a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#constant_HUMAN_PLAYER" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Minimax/MinimaxAssistant.php"><a href="files/src-infrastructure-minimax-minimaxassistant.html"><abbr title="src/Infrastructure/Minimax/MinimaxAssistant.php">MinimaxAssistant.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">16</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">HUMAN_PLAYER</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;X&#039;</span>
+</code>
+
+
+    
+    
+    
+
+    
+
+</article>
+            </section>
 
         
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -240,23 +337,24 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_register">
-        register()
-        <a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#method_register" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_suggestMove">
+        suggestMove()
+        <a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#method_suggestMove" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Providers/AIAssistantServiceProvider.php"><a href="files/src-infrastructure-providers-aiassistantserviceprovider.html"><abbr title="src/Infrastructure/Providers/AIAssistantServiceProvider.php">AIAssistantServiceProvider.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Minimax/MinimaxAssistant.php"><a href="files/src-infrastructure-minimax-minimaxassistant.html"><abbr title="src/Infrastructure/Minimax/MinimaxAssistant.php">MinimaxAssistant.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Register</p>
+        <p class="phpdocumentor-summary">suggestMove
+calculate the best movement using minimax algorithm and return the suggestion</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">register</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Container\ContainerInterface">ContainerInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$container</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">suggestMove</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Domain-Game-Board.html"><abbr title="\App\Domain\Game\Board">Board</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$board</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$model</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -265,8 +363,78 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$container</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Container\ContainerInterface">ContainerInterface</abbr></span>
+                <span class="phpdocumentor-signature__argument__name">$board</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Domain-Game-Board.html"><abbr title="\App\Domain\Game\Board">Board</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$model</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_minimax">
+        minimax()
+        <a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#method_minimax" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Infrastructure/Minimax/MinimaxAssistant.php"><a href="files/src-infrastructure-minimax-minimaxassistant.html"><abbr title="src/Infrastructure/Minimax/MinimaxAssistant.php">MinimaxAssistant.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">64</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">minimax</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">minimax</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Domain-Game-Board.html"><abbr title="\App\Domain\Game\Board">Board</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$board</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$depth</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$isMaximizing</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$board</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Domain-Game-Board.html"><abbr title="\App\Domain\Game\Board">Board</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$depth</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$isMaximizing</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -277,7 +445,11 @@
 
     
 
-    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
             </section>
 
@@ -285,7 +457,7 @@
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Infrastructure/Providers/AIAssistantServiceProvider.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Infrastructure/Minimax/MinimaxAssistant.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -384,15 +556,24 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                                                                <li><a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#toc-methods">Methods</a></li>
+                                        <li><a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#toc-constants">Constants</a></li>
+                                                                                <li><a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
+                            <li class="phpdocumentor-on-this-page-section__title">Constants</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li class=""><a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#constant_AI_PLAYER">AI_PLAYER</a></li>
+                                                    <li class=""><a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#constant_HUMAN_PLAYER">HUMAN_PLAYER</a></li>
+                                            </ul>
+                </li>
             
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li class=""><a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#method_register">register()</a></li>
+                                            <li class=""><a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#method_suggestMove">suggestMove()</a></li>
+                                            <li class=""><a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#method_minimax">minimax()</a></li>
                                     </ul>
             </li>
                     </ul>
@@ -412,7 +593,7 @@
     </section>
 </section>
         </div>
-        <a href="classes/App-Infrastructure-Providers-AIAssistantServiceProvider.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/App-Infrastructure-Minimax-MinimaxAssistant.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

@@ -105,7 +105,7 @@ class BoardController
         if (empty($this->board->getWinner()) && !$this->board->isFull()) {
             $modelName = $_ENV['OPENAI_MODEL_NAME'] ?? "";
             try {
-                $move = $aiAssistant->suggestMove($this->board->getBoard(), $modelName);
+                $move = $aiAssistant->suggestMove($this->board, $modelName);
                 $col = $move['col'] ?? '';
                 $row = $move['row'] ?? '';
                 if ($_ENV['LOG_LEVEL'] == 'debug') {

@@ -1,6 +1,6 @@
 @startuml
 interface AIAssistantInterface {
-+array suggestMove(board: array, model: string)
++array suggestMove(board: Board, model: string)
 }
 interface OpenAIClientInterface {
 +string chat(messages: array, model: string, temperature: float)
@@ -31,7 +31,7 @@ interface RequestFactoryInterface {}
 interface ResponseFactoryInterface {}
 class AIAssistant {
 +AIAssistant(openAIClient: OpenAIClientInterface)
-+array suggestMove(board: array, model: string)
++array suggestMove(board: Board, model: string)
 -array cleanJsonBlock(input: string)
 -string generateTicTacToePrompt(board: array)
 }
@@ -52,7 +52,7 @@ class Board {
 -array getColumns()
 -array getDiagonals()
 -bool allEqual(cells: array)
--bool isValidMove(row: int, col: int)
++bool isValidMove(row: int, col: int)
 }
 class BoardController {
 +BoardController(logger: LoggerInterface, board: Board, storage: StorageInterface)
@@ -90,6 +90,10 @@ class OpenAIClient {
 +OpenAIClient(httpClient: ClientInterface, requestFactory: RequestFactoryInterface, streamFactory: StreamFactoryInterface, apiKey: string, baseUrl: string)
 +string chat(messages: array, model: string, temperature: float)
 -string parseResponse(response: ResponseInterface)
+}
+class MinimaxAssistant {
++array suggestMove(board: Board, model: string)
+-int minimax(board: Board, depth: int, isMaximizing: bool)
 }
 class AIAssistantServiceProvider {
 +void register(container: ContainerInterface)
@@ -169,4 +173,5 @@ AIClientServiceProvider ..|> ServiceProvider
 StorageServiceProvider ..|> ServiceProvider
 Container ..|> ContainerInterface
 Dispatcher --> RouterInterface : uses
+MinimaxAssistant ..|> AIAssistant
 @enduml

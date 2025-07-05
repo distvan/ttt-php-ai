@@ -5,6 +5,7 @@ namespace App\Application\Services;
 use App\Application\Contracts\AIAssistant as AIAssistantInterface;
 use App\Domain\Contracts\OpenAIClient;
 use App\Shared\Exception\InvalidMoveException;
+use App\Domain\Game\Board;
 
 /**
  * AIAssistant Service
@@ -28,14 +29,14 @@ class AIAssistant implements AIAssistantInterface
     /**
      * SuggestMove
      *
-     * @param array $board
+     * @param Board $board
      * @param string $model name of the applied AI model
      * @return array
      * @throws InvalidMoveException
      */
-    public function suggestMove(array $board, $model): array
+    public function suggestMove(Board $board, $model): array
     {
-        $prompt = AIAssistant::generateTicTacToePrompt($board);
+        $prompt = AIAssistant::generatePrompt($board->getBoard());
 
         $messages = [
             ['role' => 'system', 'content' => 'You are a helpful AI assistant.'],
@@ -91,7 +92,7 @@ class AIAssistant implements AIAssistantInterface
      * @param array $board
      * @return string
      */
-    private static function generateTicTacToePrompt(array $board): string
+    protected static function generatePrompt(array $board): string
     {
         $boardJson = json_encode($board, JSON_PRETTY_PRINT);
 

@@ -177,7 +177,7 @@ class Board
      * @param int $row
      * @param int $col
      */
-    private function isValidMove(int $row, int $col): bool
+    public function isValidMove(int $row, int $col): bool
     {
         return isset($this->board[$row][$col]) && empty($this->board[$row][$col]);
     }

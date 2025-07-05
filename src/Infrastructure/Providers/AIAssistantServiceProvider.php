@@ -14,6 +14,7 @@ use App\Shared\Contracts\ServiceProvider;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Container\ContainerInterface;
 use App\Infrastructure\Http\Curl\CurlExecutor;
+use App\Infrastructure\Minimax\MinimaxAssistant;
 
 class AIAssistantServiceProvider implements ServiceProvider
 {
@@ -23,6 +24,9 @@ class AIAssistantServiceProvider implements ServiceProvider
             $container->bind(
                 AIAssistantInterface::class,
                 function () {
+                    if (empty($_ENV["OPENAI_API_URL"])) {
+                        return new MinimaxAssistant();
+                    }
                     $apiKey = !empty($_ENV["OPENAI_API_KEY"]) ? $_ENV["OPENAI_API_KEY"] : "";
                     $apiUrl = !empty($_ENV["OPENAI_API_URL"]) ? $_ENV["OPENAI_API_URL"] : "";
                     $factory = new Psr17Factory();

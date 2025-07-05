@@ -14,6 +14,10 @@ The backend generates a prompt, processes the AI's response, and sends it to the
 The game is played by two people who take turns marking on X or an O on a 3x3 grid.
 The first person to mark three of their signs in a horizontal, vertical, or diagonal row is the winner.
 
+## Settings
+
+See the .env variable, here you can set any LLM model or if the OPENAI_API_URL variable is empty the local minimax AI algorithm be used. \
+
 ## Testing
 For backend run: composer test \
 For frontend run: npm run test-win or npm run test-unix
