@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "16ee452535a33afc3193941bc8274adb",
+    "content-hash": "d3c4b0415fdf596bebcf1c9dcdd98b9e",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -1204,6 +1204,54 @@
                 }
             ],
             "time": "2024-05-06T16:37:16+00:00"
+        },
+        {
+            "name": "distvan/php2plantuml",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/distvan/php2plantuml.git",
+                "reference": "50a6c10e602260943509826d0931fedc541b67d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/distvan/php2plantuml/zipball/50a6c10e602260943509826d0931fedc541b67d6",
+                "reference": "50a6c10e602260943509826d0931fedc541b67d6",
+                "shasum": ""
+            },
+            "require": {
+                "nikic/php-parser": "^5.5"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "App\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only / GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Istvan Dobrentei",
+                    "email": "info@dobrenteiistvan.hu",
+                    "homepage": "https://www.en.dobrenteiistvan.hu",
+                    "role": "Software Developer"
+                }
+            ],
+            "description": "Creates an uml digram from php files",
+            "homepage": "https://github.com/distvan/",
+            "keywords": [
+                "php",
+                "plantuml",
+                "uml"
+            ],
+            "support": {
+                "issues": "https://github.com/distvan/php2plantuml/issues",
+                "source": "https://github.com/distvan/php2plantuml/tree/v1.0.0"
+            },
+            "time": "2025-07-06T16:44:53+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -4459,12 +4507,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=8.1"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }

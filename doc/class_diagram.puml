@@ -1,177 +1,222 @@
 @startuml
-interface AIAssistantInterface {
-+array suggestMove(board: Board, model: string)
+class App\Application\Application {
+ + __construct($dispatcher: Dispatcher) : void
+ + run($request: ServerRequestInterface) : void
+ - emit($response: ResponseInterface) : void
 }
-interface OpenAIClientInterface {
-+string chat(messages: array, model: string, temperature: float)
+
+interface App\Application\Contracts\AIAssistant {
+ + suggestMove($board: Board, $model: string) : array
 }
-interface StorageInterface {
-+save(key: string, value: mixed)
-+mixed load(key: string)
-+delete(key: string)
-+bool exists(key: string)
-+clear()
+
+class App\Application\Services\AIAssistant {
+ + __construct($openAIClient: OpenAIClient) : void
+ + suggestMove($board: Board, $model: mixed) : array
+ - cleanJsonBlock($input: string) : array
+ # generatePrompt($board: array) : string
 }
-interface ClientInterface {
-+ResponseInterface sendRequest(request: RequestInterface)
+
+interface App\Domain\Contracts\OpenAIClient {
+ + chat($messages: array, $model: string, $temperature: float) : string
 }
-interface ServiceProvider {
-+void register(container: ContainerInterface)
+
+interface App\Domain\Contracts\Storage {
+ + save($key: string, $value: mixed) : void
+ + load($key: string) : mixed
+ + delete($key: string) : void
+ + exists($key: string) : bool
+ + clear() : void
 }
-interface ContainerInterface {
-+mixed get(id: string)
-+bool has(id: string)
+
+class App\Domain\Game\Board {
+ - board : array
+ - size : int
+ + createEmptyBoard($size: int) : void
+ + getBoard() : array
+ + setBoard($board: array) : void
+ + validateBoard($board: array) : void
+ + getWinner() : string
+ - getColumns() : array
+ - getDiagonals() : array
+ - allEqual($cells: array) : bool
+ + hasNoWinnerButBoardIsFull() : bool
+ + isFull() : bool
+ + isValidMove($row: int, $col: int) : bool
+ + applyMove($row: int, $col: int, $player: string) : void
 }
-interface RouterInterface {
-+void add(method: string, path: string, handler: callable)
-+callable match(request: ServerRequestInterface)
+
+class App\Http\Controllers\BoardController {
+ + __construct($logger: LoggerInterface, $board: Board, $storage: Storage) : void
+ + __invoke($request: ServerRequestInterface) : ResponseInterface
+ + mark($request: ServerRequestInterface, $aiAssistant: AIAssistant) : ResponseInterface
+ - getResultValue($success: bool, $data: mixed) : array
 }
-interface StreamFactoryInterface {}
-interface RequestFactoryInterface {}
-interface ResponseFactoryInterface {}
-class AIAssistant {
-+AIAssistant(openAIClient: OpenAIClientInterface)
-+array suggestMove(board: Board, model: string)
--array cleanJsonBlock(input: string)
--string generateTicTacToePrompt(board: array)
+
+class App\Http\Controllers\IndexController {
+ + __construct($view: View) : void
+ + __invoke($request: ServerRequestInterface) : ResponseInterface
 }
-class Application {
-+Application(dispatcher: Dispatcher)
-+void run(request: ServerRequestInterface)
--void emit(response: ResponseInterface)
+
+class App\Infrastructure\Container\Container {
+ # bindings : array
+ # instances : array
+ + bind($id: string, $resolver: string|callable) : void
+ + get($id: string) : mixed
+ + has($id: string) : bool
 }
-class Board {
-+void createEmptyBoard(size: int)
-+array getBoard()
-+void setBoard(board: array)
-+void validateBoard(board: array)
-+string getWinner()
-+void applyMove(row: int, col: int, player: string)
-+bool hasNoWinnerButBoardIsFull()
-+bool isFull()
--array getColumns()
--array getDiagonals()
--bool allEqual(cells: array)
-+bool isValidMove(row: int, col: int)
+
+class App\Infrastructure\Exception\KernelException {
 }
-class BoardController {
-+BoardController(logger: LoggerInterface, board: Board, storage: StorageInterface)
-+ResponseInterface __invoke(request: RequestIntreface)
-+ResponseInterface mark(request: RequestInterface, aiAssistant: AIAssistantInterface)
--array getResultValue(success: bool, data: mixed)
+
+class App\Infrastructure\Exception\NotFoundException {
 }
-class IndexController {
-+IndexController(view: View)
-+ResponseInterface __invoke(request: ServerRequestInterface)
+
+class App\Infrastructure\Exception\OpenAIException {
 }
-class KernelException {}
-class NotFoundException {}
-class OpenAIException {}
-class CurlExecutor {
-+string execute(options: array)
+
+interface App\Infrastructure\Http\Contracts\RouterInterface {
+ + add($method: string, $path: string, $handler: callable) : void
+ + match($request: ServerRequestInterface) : ?callable
 }
-class CurlRequestOptionsBuilder {
-+array build(request: RequestInterface)
+
+class App\Infrastructure\Http\Curl\CurlExecutor {
+ - statusCode : int
+ - headerSize : int
+ + execute($options: array) : string
+ + getStatusCode() : int
+ + getHeaderSize() : int
 }
-class CurlResponseParser {
-+CurlResponseParser(responseFactory: ResponseFactoryInterface, streamFactory: StreamFactoryInterface, executor: CurlExecutor)
-+ResponseInterface parse(raw: string)
+
+class App\Infrastructure\Http\Curl\CurlHttpClient {
+ + __construct($optionsBuilder: CurlRequestOptionsBuilder, $executor: CurlExecutor, $responseParser: CurlResponseParser) : void
+ + sendRequest($request: RequestInterface) : ResponseInterface
 }
-class CurlHttpClient {
-+CurlHttpClient(optionsBuilder: CurlRequestOptionsBuilder, executor: CurlExecutor, responseParser: CurlResponseParser)
-+ResponseInterface sendRequest(request: RequestInterface)
+
+class App\Infrastructure\Http\Curl\CurlRequestOptionsBuilder {
+ + build($request: RequestInterface) : array
 }
-class Kernel {
-+Kernel(container: Container, providers: array)
-+Container getContainer()
-+void registerProvider(providerClasses: array)
+
+class App\Infrastructure\Http\Curl\CurlResponseParser {
+ + __construct($responseFactory: ResponseFactoryInterface, $streamFactory: StreamFactoryInterface, $executor: CurlExecutor) : void
+ + parse($raw: string) : ResponseInterface
 }
-class OpenAIClient {
-+OpenAIClient(httpClient: ClientInterface, requestFactory: RequestFactoryInterface, streamFactory: StreamFactoryInterface, apiKey: string, baseUrl: string)
-+string chat(messages: array, model: string, temperature: float)
--string parseResponse(response: ResponseInterface)
+
+class App\Infrastructure\Http\Dispatcher {
+ + __construct($router: RouterInterface) : void
+ + handle($request: ServerRequestInterface) : ResponseInterface
 }
-class MinimaxAssistant {
-+array suggestMove(board: Board, model: string)
--int minimax(board: Board, depth: int, isMaximizing: bool)
+
+class App\Infrastructure\Http\Routing\Route {
+ + __construct($method: string, $path: string, $handler: mixed) : void
+ + matches($request: ServerRequestInterface) : bool
 }
-class AIAssistantServiceProvider {
-+void register(container: ContainerInterface)
+
+class App\Infrastructure\Http\Routing\Router {
+ - routes : array
+ + add($method: string, $path: string, $handler: callable) : void
+ + match($request: ServerRequestInterface) : ?callable
 }
-class AIClientServiceProvider {
-+void register(container: ContainerInterface)
+
+class App\Infrastructure\Kernel\Kernel {
+ + __construct($container: ContainerInterface, $providers: array) : void
+ + getContainer() : ContainerInterface
+ + registerProviders($providerClasses: array) : void
 }
-class StorageServiceProvider {
-+void register(container: ContainerInterface)
+
+class App\Infrastructure\Minimax\MinimaxAssistant {
+ + suggestMove($board: Board, $model: mixed) : array
+ - minimax($board: Board, $depth: int, $isMaximizing: bool) : int
 }
-class Container {
-+void bind(id: string, resolver: callable|string)
-+mixed get(id: string)
-+bool has(id: string)
+
+class App\Infrastructure\OpenAI\OpenAIClient {
+ + __construct($httpClient: ClientInterface, $requestFactory: RequestFactoryInterface, $streamFactory: StreamFactoryInterface, $apiKey: string, $baseUrl: string) : void
+ + chat($messages: array, $model: string, $temperature: float) : string
+ - parseResponse($response: ResponseInterface) : string
 }
-class Dispatcher {
-+Dispatcher(router: RouterInterface)
-+ResponseInterface handle(request: ServerRequestInterface)
+
+class App\Infrastructure\Providers\AIAssistantServiceProvider {
+ + register($container: ContainerInterface) : void
 }
-class LoggerFactory {
-+Logger create(channel: string)
+
+class App\Infrastructure\Providers\AIClientServiceProvider {
+ + register($container: ContainerInterface) : void
 }
-class Route {
-+Route(method: string, path: string, handler: callable)
-+bool matches(request: ServerRequestInterface)
+
+class App\Infrastructure\Providers\StorageServiceProvider {
+ + register($container: ContainerInterface) : void
 }
-class Router {
-+void add(method: string, path: string, handler: callable)
-+callable match(request: serverRequestInterface)
+
+class App\Shared\Config\Config {
+ # basePath : string
+ + __construct($basePath: string) : void
+ + get($file: string) : array
 }
-class Config {
-+Config(basePath: string)
-+array get(file: string)
+
+interface App\Shared\Contracts\ServiceProvider {
+ + register($container: ContainerInterface) : void
 }
-class ConfigException {}
-class ContainerException {}
-class CurlException {}
-class FileNotFoundException {}
-class InvalidMoveException {}
-class JsonResponseFactory {
-+ResponseInterface create(data: array, status int, options: int)
+
+class App\Shared\Exception\ConfigException {
 }
-class View {
-+View(viewsPath: string, layoutsPath: string)
-+ResponseInterface render(view: string, data: array, layout: string)
--string replacePlaceholders(template: string, data: array)
+
+class App\Shared\ContainerException {
 }
-class SessionStorage {
-+SessionStorage(logger: LoggerInterface, namespace: string)
-+void save(key: string, value: mixed)
-+mixed load(key: string)
-+void delete(key: string)
-+void clear()
--void ensureSessionStarted()
+
+class App\Shared\Exception\CurlException {
 }
-Application --> Dispatcher : uses
-AIAssistant ..|> AIAssistantInterface
-AIAssistant --> OpenAIClientInterface : uses
-BoardController --> StorageInterface : uses
-BoardController --> Board : uses
-BoardController --> LoggerInterface : uses
-IndexController --> View : uses
-CurlHttpClient ..|> ClientInterface
-CurlHttpClient --> CurlRequestOptionsBuilder : uses
-CurlHttpClient --> CurlExecutor : uses
-CurlHttpClient --> CurlResponseParser : uses
-CurlResponseParser --> ResponseFactoryInterface : uses
-CurlResponseParser --> StreamFactoryInterface : uses
-CurlResponseParser --> CurlExecutor : uses
-Kernel --> ContainerInterface : uses
-OpenAIClient ..|> OpenAIClientInterface
-OpenAIClient --> ClientInterface : uses
-OpenAIClient --> RequestFactoryInterface : uses
-OpenAIClient --> StreamFactoryInterface : uses
-AIAssistantServiceProvider ..|> ServiceProvider
-AIClientServiceProvider ..|> ServiceProvider
-StorageServiceProvider ..|> ServiceProvider
-Container ..|> ContainerInterface
-Dispatcher --> RouterInterface : uses
-MinimaxAssistant ..|> AIAssistant
+
+class App\Shared\Exception\FileNotFoundException {
+}
+
+class App\Shared\Exception\InvalidMoveException {
+}
+
+class App\Shared\Http\JsonResponseFactory {
+ + create($data: array, $status: int, $options: int) : ResponseInterface
+}
+
+class App\Shared\Logging\LoggerFactory {
+ + create($channel: string) : Logger
+}
+
+class App\Shared\View {
+ # viewsPath : string
+ # layoutsPath : string
+ + __construct($viewsPath: string, $layoutsPath: string) : void
+ + render($view: string, $data: array, $layout: string) : ResponseInterface
+ - replacePlaceholders($template: string, $data: array) : string
+}
+
+class App\Storage\SessionStorage {
+ - namespace : string
+ - logger : mixed
+ + __construct($logger: LoggerInterface, $namespace: string) : void
+ + save($key: string, $value: mixed) : void
+ + load($key: string) : mixed
+ + delete($key: string) : void
+ + exists($key: string) : bool
+ + clear() : void
+ - ensureSessionStarted() : void
+}
+
+App\Application\Contracts\AIAssistant <|.. App\Application\Services\AIAssistant
+Psr\Container\ContainerInterface <|.. App\Infrastructure\Container\Container
+Exception <|-- App\Infrastructure\Exception\KernelException
+Exception <|-- App\Infrastructure\Exception\NotFoundException
+Psr\Container\NotFoundExceptionInterface <|.. App\Infrastructure\Exception\NotFoundException
+RuntimeException <|-- App\Infrastructure\Exception\OpenAIException
+Psr\Http\Client\ClientInterface <|.. App\Infrastructure\Http\Curl\CurlHttpClient
+App\Infrastructure\Http\Contracts\RouterInterface <|.. App\Infrastructure\Http\Routing\Router
+App\Application\Contracts\AIAssistant <|.. App\Infrastructure\Minimax\MinimaxAssistant
+App\Domain\Contracts\OpenAIClient <|.. App\Infrastructure\OpenAI\OpenAIClient
+App\Shared\Contracts\ServiceProvider <|.. App\Infrastructure\Providers\AIAssistantServiceProvider
+App\Shared\Contracts\ServiceProvider <|.. App\Infrastructure\Providers\AIClientServiceProvider
+App\Shared\Contracts\ServiceProvider <|.. App\Infrastructure\Providers\StorageServiceProvider
+Exception <|-- App\Shared\Exception\ConfigException
+Exception <|-- App\Shared\ContainerException
+Psr\Container\ContainerExceptionInterface <|.. App\Shared\ContainerException
+RuntimeException <|-- App\Shared\Exception\CurlException
+Exception <|-- App\Shared\Exception\FileNotFoundException
+Exception <|-- App\Shared\Exception\InvalidMoveException
+App\Domain\Contracts\Storage <|.. App\Storage\SessionStorage
 @enduml

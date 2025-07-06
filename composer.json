@@ -33,7 +33,8 @@
         "squizlabs/php_codesniffer": "*",
         "phpunit/phpunit": "^10.5",
         "guzzlehttp/guzzle": "^7.9",
-        "phan/phan": "^5.4"
+        "phan/phan": "^5.4",
+        "distvan/php2plantuml": "^1.0"
     },
     "scripts": {
         "test": "./vendor/bin/phpunit --configuration phpunit.xml",
