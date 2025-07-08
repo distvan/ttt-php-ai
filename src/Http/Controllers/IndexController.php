@@ -35,6 +35,6 @@ class IndexController
     public function __invoke(ServerRequestInterface $request): ResponseInterface
     {
         $apiUrl = $_ENV['APPLICATION_API_URL'] ?? "http://localhost:8080";
-        return $this->view->render('index', ['apiUrl' => $apiUrl], 'main', '');
+        return $this->view->render('index', ['apiUrl' => $apiUrl, 'title' => 'Tic-Tac-Toe'], 'main', '');
     }
 }

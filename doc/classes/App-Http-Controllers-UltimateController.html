@@ -148,7 +148,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    BoardController
+    UltimateController
 
     
             <div class="phpdocumentor-element__package">
@@ -169,20 +169,20 @@
 </div>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/BoardController.php"><a href="files/src-http-controllers-boardcontroller.html"><abbr title="src/Http/Controllers/BoardController.php">BoardController.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/UltimateController.php"><a href="files/src-http-controllers-ultimatecontroller.html"><abbr title="src/Http/Controllers/UltimateController.php">UltimateController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">BoardController Class</p>
+            <p class="phpdocumentor-summary">UltimateController</p>
 
 
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/App-Http-Controllers-BoardController.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Http-Controllers-UltimateController.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -210,7 +210,7 @@
 
 <h3 id="toc">
     Table of Contents
-    <a href="classes/App-Http-Controllers-BoardController.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Http-Controllers-UltimateController.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -220,171 +220,67 @@
 
 
 
-<h4 id="toc-constants">
-    Constants
-    <a href="classes/App-Http-Controllers-BoardController.html#toc-constants" class="headerlink"><i class="fas fa-link"></i></a>
-
-</h4>
-<dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
-    <a class="" href="classes/App-Http-Controllers-BoardController.html#constant_AI_MARK">AI_MARK</a>
-    <span>
-        &nbsp;= &#039;O&#039;                            </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
-    <a class="" href="classes/App-Http-Controllers-BoardController.html#constant_PLAYER_MARK">PLAYER_MARK</a>
-    <span>
-        &nbsp;= &#039;X&#039;                            </span>
-</dt>
-
-    </dl>
 
 
 <h4 id="toc-properties">
     Properties
-    <a href="classes/App-Http-Controllers-BoardController.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Http-Controllers-UltimateController.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/App-Http-Controllers-BoardController.html#property_board">$board</a>
+    <a class="" href="classes/App-Http-Controllers-UltimateController.html#property_board">$board</a>
     <span>
                         &nbsp;: <a href="classes/App-Domain-Game-Board.html"><abbr title="\App\Domain\Game\Board">Board</abbr></a>            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/App-Http-Controllers-BoardController.html#property_logger">$logger</a>
+    <a class="" href="classes/App-Http-Controllers-UltimateController.html#property_storage">$storage</a>
     <span>
-                        &nbsp;: <abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr>            </span>
+                        &nbsp;: <a href="classes/App-Domain-Contracts-Storage.html"><abbr title="\App\Domain\Contracts\Storage">Storage</abbr></a>            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/App-Http-Controllers-BoardController.html#property_storage">$storage</a>
+    <a class="" href="classes/App-Http-Controllers-UltimateController.html#property_view">$view</a>
     <span>
-                        &nbsp;: <a href="classes/App-Domain-Contracts-Storage.html"><abbr title="\App\Domain\Contracts\Storage">Storage</abbr></a>            </span>
+                        &nbsp;: <a href="classes/App-Shared-View.html"><abbr title="\App\Shared\View">View</abbr></a>            </span>
 </dt>
 
     </dl>
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/App-Http-Controllers-BoardController.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Http-Controllers-UltimateController.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Http-Controllers-BoardController.html#method___construct">__construct()</a>
+    <a class="" href="classes/App-Http-Controllers-UltimateController.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 <dd>Constructor</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Http-Controllers-BoardController.html#method___invoke">__invoke()</a>
+    <a class="" href="classes/App-Http-Controllers-UltimateController.html#method___invoke">__invoke()</a>
     <span>
                                 &nbsp;: <abbr title="\Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>    </span>
 </dt>
 <dd>__invoke
-Initialize the Game table or reloading the page and create an existing table again</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Http-Controllers-BoardController.html#method_mark">mark()</a>
-    <span>
-                                &nbsp;: <abbr title="\Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>    </span>
-</dt>
-<dd>Mark
-Validate and store the player sign
-Asking an AI assistant to make a sign on the board
-return a json response</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a class="" href="classes/App-Http-Controllers-BoardController.html#method_getResultValue">getResultValue()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd>getResultValue</dd>
+Initialize the Ultimate structure
+There are nine boards plus one just for store the final result.</dd>
 
     </dl>
 
 
 
         
-    <section class="phpdocumentor-constants">
-        <h3 class="phpdocumentor-elements__header" id="constants">
-            Constants
-            <a href="classes/App-Http-Controllers-BoardController.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
-
-        </h3>
-                    <article class="phpdocumentor-element -constant -private ">
-    <h4 class="phpdocumentor-element__name" id="constant_AI_MARK">
-        AI_MARK
-        <a href="classes/App-Http-Controllers-BoardController.html#constant_AI_MARK" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/BoardController.php"><a href="files/src-http-controllers-boardcontroller.html"><abbr title="src/Http/Controllers/BoardController.php">BoardController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">27</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">AI_MARK</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;O&#039;</span>
-</code>
-
-
-    
-    
-    
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -private ">
-    <h4 class="phpdocumentor-element__name" id="constant_PLAYER_MARK">
-        PLAYER_MARK
-        <a href="classes/App-Http-Controllers-BoardController.html#constant_PLAYER_MARK" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/BoardController.php"><a href="files/src-http-controllers-boardcontroller.html"><abbr title="src/Http/Controllers/BoardController.php">BoardController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">26</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">PLAYER_MARK</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;X&#039;</span>
-</code>
-
-
-    
-    
-    
-
-    
-
-</article>
-            </section>
 
         
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/App-Http-Controllers-BoardController.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/App-Http-Controllers-UltimateController.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -396,15 +292,15 @@ return a json response</dd>
 >
     <h4 class="phpdocumentor-element__name" id="property_board">
         $board
-        <a href="classes/App-Http-Controllers-BoardController.html#property_board" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Http-Controllers-UltimateController.html#property_board" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                             </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/BoardController.php"><a href="files/src-http-controllers-boardcontroller.html"><abbr title="src/Http/Controllers/BoardController.php">BoardController.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/UltimateController.php"><a href="files/src-http-controllers-ultimatecontroller.html"><abbr title="src/Http/Controllers/UltimateController.php">UltimateController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
@@ -432,55 +328,17 @@ return a json response</dd>
             -private
                                                                     "
 >
-    <h4 class="phpdocumentor-element__name" id="property_logger">
-        $logger
-        <a href="classes/App-Http-Controllers-BoardController.html#property_logger" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/BoardController.php"><a href="files/src-http-controllers-boardcontroller.html"><abbr title="src/Http/Controllers/BoardController.php">BoardController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">37</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-        <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type"><abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr></span>
-    <span class="phpdocumentor-signature__name">$logger</span>
-    </code>
-
-    
-    
-    
-
-    
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                                    "
->
     <h4 class="phpdocumentor-element__name" id="property_storage">
         $storage
-        <a href="classes/App-Http-Controllers-BoardController.html#property_storage" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Http-Controllers-UltimateController.html#property_storage" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                             </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/BoardController.php"><a href="files/src-http-controllers-boardcontroller.html"><abbr title="src/Http/Controllers/BoardController.php">BoardController.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/UltimateController.php"><a href="files/src-http-controllers-ultimatecontroller.html"><abbr title="src/Http/Controllers/UltimateController.php">UltimateController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -501,12 +359,50 @@ return a json response</dd>
     
 
 </article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_view">
+        $view
+        <a href="classes/App-Http-Controllers-UltimateController.html#property_view" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/UltimateController.php"><a href="files/src-http-controllers-ultimatecontroller.html"><abbr title="src/Http/Controllers/UltimateController.php">UltimateController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">30</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type"><a href="classes/App-Shared-View.html"><abbr title="\App\Shared\View">View</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$view</span>
+    </code>
+
+    
+    
+    
+
+    
+
+    
+
+</article>
             </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/App-Http-Controllers-BoardController.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/App-Http-Controllers-UltimateController.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -517,13 +413,13 @@ return a json response</dd>
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/App-Http-Controllers-BoardController.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Http-Controllers-UltimateController.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/BoardController.php"><a href="files/src-http-controllers-boardcontroller.html"><abbr title="src/Http/Controllers/BoardController.php">BoardController.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/UltimateController.php"><a href="files/src-http-controllers-ultimatecontroller.html"><abbr title="src/Http/Controllers/UltimateController.php">UltimateController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
@@ -531,7 +427,7 @@ return a json response</dd>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$logger</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Domain-Game-Board.html"><abbr title="\App\Domain\Game\Board">Board</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$board</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Domain-Contracts-Storage.html"><abbr title="\App\Domain\Contracts\Storage">Storage</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$storage</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Shared-View.html"><abbr title="\App\Shared\View">View</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$view</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Domain-Game-Board.html"><abbr title="\App\Domain\Game\Board">Board</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$board</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Domain-Contracts-Storage.html"><abbr title="\App\Domain\Contracts\Storage">Storage</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$storage</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -540,8 +436,8 @@ return a json response</dd>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$logger</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr></span>
+                <span class="phpdocumentor-signature__argument__name">$view</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Shared-View.html"><abbr title="\App\Shared\View">View</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -576,18 +472,19 @@ return a json response</dd>
 >
     <h4 class="phpdocumentor-element__name" id="method___invoke">
         __invoke()
-        <a href="classes/App-Http-Controllers-BoardController.html#method___invoke" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Http-Controllers-UltimateController.html#method___invoke" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/BoardController.php"><a href="files/src-http-controllers-boardcontroller.html"><abbr title="src/Http/Controllers/BoardController.php">BoardController.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/UltimateController.php"><a href="files/src-http-controllers-ultimatecontroller.html"><abbr title="src/Http/Controllers/UltimateController.php">UltimateController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">__invoke
-Initialize the Game table or reloading the page and create an existing table again</p>
+Initialize the Ultimate structure
+There are nine boards plus one just for store the final result.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -618,136 +515,13 @@ Initialize the Game table or reloading the page and create an existing table aga
             </section>
 
 </article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_mark">
-        mark()
-        <a href="classes/App-Http-Controllers-BoardController.html#method_mark" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/BoardController.php"><a href="files/src-http-controllers-boardcontroller.html"><abbr title="src/Http/Controllers/BoardController.php">BoardController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">86</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Mark
-Validate and store the player sign
-Asking an AI assistant to make a sign on the board
-return a json response</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">mark</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\ServerRequestInterface">ServerRequestInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Application-Contracts-AIAssistant.html"><abbr title="\App\Application\Contracts\AIAssistant">AIAssistant</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$aiAssistant</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Psr\Http\Message\ResponseInterface">ResponseInterface</abbr></span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-        <section class="phpdocumentor-description"><p>example:
-{
-&quot;success&quot;: true,
-&quot;result&quot;: {&quot;col&quot;:1, &quot;row&quot;:1},
-&quot;gameover&quot;: false
-&quot;winner&quot;: &quot;&quot;
-}</p>
-</section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\ServerRequestInterface">ServerRequestInterface</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$aiAssistant</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Application-Contracts-AIAssistant.html"><abbr title="\App\Application\Contracts\AIAssistant">AIAssistant</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><abbr title="\Psr\Http\Message\ResponseInterface">ResponseInterface</abbr></span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getResultValue">
-        getResultValue()
-        <a href="classes/App-Http-Controllers-BoardController.html#method_getResultValue" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Http/Controllers/BoardController.php"><a href="files/src-http-controllers-boardcontroller.html"><abbr title="src/Http/Controllers/BoardController.php">BoardController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">136</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">getResultValue</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">getResultValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$success</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$success</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            </section>
-
-</article>
             </section>
 
         <div class="phpdocumentor-modal" id="source-view">
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Http/Controllers/BoardController.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Http/Controllers/UltimateController.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -846,35 +620,25 @@ return a json response</p>
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                        <li><a href="classes/App-Http-Controllers-BoardController.html#toc-constants">Constants</a></li>
-                                                            <li><a href="classes/App-Http-Controllers-BoardController.html#toc-properties">Properties</a></li>
-                                                            <li><a href="classes/App-Http-Controllers-BoardController.html#toc-methods">Methods</a></li>
+                                                            <li><a href="classes/App-Http-Controllers-UltimateController.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/App-Http-Controllers-UltimateController.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
-                            <li class="phpdocumentor-on-this-page-section__title">Constants</li>
-                <li>
-                    <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/App-Http-Controllers-BoardController.html#constant_AI_MARK">AI_MARK</a></li>
-                                                    <li class=""><a href="classes/App-Http-Controllers-BoardController.html#constant_PLAYER_MARK">PLAYER_MARK</a></li>
-                                            </ul>
-                </li>
             
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/App-Http-Controllers-BoardController.html#property_board">$board</a></li>
-                                                    <li class=""><a href="classes/App-Http-Controllers-BoardController.html#property_logger">$logger</a></li>
-                                                    <li class=""><a href="classes/App-Http-Controllers-BoardController.html#property_storage">$storage</a></li>
+                                                    <li class=""><a href="classes/App-Http-Controllers-UltimateController.html#property_board">$board</a></li>
+                                                    <li class=""><a href="classes/App-Http-Controllers-UltimateController.html#property_storage">$storage</a></li>
+                                                    <li class=""><a href="classes/App-Http-Controllers-UltimateController.html#property_view">$view</a></li>
                                             </ul>
                 </li>
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li class=""><a href="classes/App-Http-Controllers-BoardController.html#method___construct">__construct()</a></li>
-                                            <li class=""><a href="classes/App-Http-Controllers-BoardController.html#method___invoke">__invoke()</a></li>
-                                            <li class=""><a href="classes/App-Http-Controllers-BoardController.html#method_mark">mark()</a></li>
-                                            <li class=""><a href="classes/App-Http-Controllers-BoardController.html#method_getResultValue">getResultValue()</a></li>
+                                            <li class=""><a href="classes/App-Http-Controllers-UltimateController.html#method___construct">__construct()</a></li>
+                                            <li class=""><a href="classes/App-Http-Controllers-UltimateController.html#method___invoke">__invoke()</a></li>
                                     </ul>
             </li>
                     </ul>
@@ -894,7 +658,7 @@ return a json response</p>
     </section>
 </section>
         </div>
-        <a href="classes/App-Http-Controllers-BoardController.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/App-Http-Controllers-UltimateController.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

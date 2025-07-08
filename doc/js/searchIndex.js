@@ -203,7 +203,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Http\\Controllers\\BoardController\u003A\u003AgetResultValue\u0028\u0029",
             "name": "getResultValue",
-            "summary": "",
+            "summary": "getResultValue",
             "url": "classes/App-Http-Controllers-BoardController.html#method_getResultValue"
         },                {
             "fqsen": "\\App\\Http\\Controllers\\BoardController\u003A\u003APLAYER_MARK",
@@ -250,6 +250,36 @@ Search.appendIndex(
             "name": "view",
             "summary": "",
             "url": "classes/App-Http-Controllers-IndexController.html#property_view"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\UltimateController",
+            "name": "UltimateController",
+            "summary": "UltimateController",
+            "url": "classes/App-Http-Controllers-UltimateController.html"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\UltimateController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor",
+            "url": "classes/App-Http-Controllers-UltimateController.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\UltimateController\u003A\u003A__invoke\u0028\u0029",
+            "name": "__invoke",
+            "summary": "__invoke\nInitialize\u0020the\u0020Ultimate\u0020structure\nThere\u0020are\u0020nine\u0020boards\u0020plus\u0020one\u0020just\u0020for\u0020store\u0020the\u0020final\u0020result.",
+            "url": "classes/App-Http-Controllers-UltimateController.html#method___invoke"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\UltimateController\u003A\u003A\u0024view",
+            "name": "view",
+            "summary": "",
+            "url": "classes/App-Http-Controllers-UltimateController.html#property_view"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\UltimateController\u003A\u003A\u0024board",
+            "name": "board",
+            "summary": "",
+            "url": "classes/App-Http-Controllers-UltimateController.html#property_board"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\UltimateController\u003A\u003A\u0024storage",
+            "name": "storage",
+            "summary": "",
+            "url": "classes/App-Http-Controllers-UltimateController.html#property_storage"
         },                {
             "fqsen": "\\App\\Infrastructure\\Container\\Container",
             "name": "Container",

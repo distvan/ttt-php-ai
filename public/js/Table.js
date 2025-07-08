@@ -9,13 +9,14 @@ export class Table extends EventEmitter {
      *
      * @param {number} rows the number of rows in the table
      * @param {number} cols the number of rows in the table
-     * @param {string} containerId 
+     * @param {string} containerId
      */
-    constructor(rows, cols, containerId) {
+    constructor(rows, cols, containerId, tableId='default') {
         super();
         this.rows = rows;
         this.cols = cols;
         this.container = document.getElementById(containerId);
+        this.tableId = tableId;
         this.cells = [];
         this.ready = this.loadAndRender();
     }
@@ -24,7 +25,7 @@ export class Table extends EventEmitter {
      * loadAndRender
      */
     async loadAndRender() {
-      const res = await fetch(this.container.dataset.apiUrl + "/init-board", {method: "GET", headers: {}});
+      const res = await fetch(this.container.dataset.apiUrl + "/init-board?table=" + this.tableId, {method: "GET", headers: {}});
       const data = await res.json();
       this.generateTable(data);
     }
@@ -40,8 +41,8 @@ export class Table extends EventEmitter {
 
     /**
      * Create html table from json input data
-     * 
-     * @param {JSON} jsonData 
+     *
+     * @param {JSON} jsonData
      */
     generateTable(jsonData) {
         const table = document.createElement('table');
@@ -65,9 +66,9 @@ export class Table extends EventEmitter {
 
     /**
      * Getting a cell from the position
-     * 
-     * @param {number} row 
-     * @param {number} col 
+     *
+     * @param {number} row
+     * @param {number} col
      * @returns {string | null}
      */
     getCell(row, col) {
@@ -79,12 +80,19 @@ export class Table extends EventEmitter {
 
     /**
      * Checking the position of cell, if valid it returns true
-     * 
-     * @param {number} row 
-     * @param {number} col 
+     *
+     * @param {number} row
+     * @param {number} col
      * @returns {boolean}
      */
     isValidPosition(row, col) {
         return row >= 0 && row < this.rows && col >= 0 && col < this.cols;
+    }
+
+    /**
+     * getTableId
+     */
+    getTableId() {
+      return this.tableId;
     }
 }

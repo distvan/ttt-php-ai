@@ -24,6 +24,7 @@ use App\Shared\Logging\LoggerFactory;
 use Psr\Http\Message\ServerRequestInterface;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\BoardController;
+use App\Http\Controllers\UltimateController;
 use App\Infrastructure\Kernel\Kernel;
 use App\Shared\Config\Config;
 use App\Shared\View;
@@ -71,6 +72,15 @@ $router->add('POST', '/mark', function(ServerRequestInterface $request) use ($co
         $container->get(Storage::class)
     );
     return $controller->mark($request, $container->get(AIAssistantInterface::class));
+});
+
+$router->add('GET', '/ultimate', function(ServerRequestInterface $request) use ($container) {
+    $controller = new UltimateController(
+        new View(__DIR__ . '/../src/Http/Views', __DIR__ . '/../src/Http/Views/layouts'),
+        new Board(),
+        $container->get(Storage::class)
+    );
+    return $controller($request);
 });
 
 //create and run app

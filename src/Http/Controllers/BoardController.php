@@ -48,19 +48,20 @@ class BoardController
      */
     public function __invoke(ServerRequestInterface $request): ResponseInterface
     {
+        $tableId = isset($request->getQueryParams()['table']) ? $request->getQueryParams()['table'] : 'default';
         $inputBoardSize = isset($request->getQueryParams()['size']) ? (int)$request->getQueryParams()['size'] : 3;
-        if ($this->storage->exists('board-data')) {
-            $boardData = $this->storage->load('board-data');
+        if ($this->storage->exists($tableId)) {
+            $boardData = $this->storage->load($tableId);
             $this->board->setBoard($boardData);
             if (!empty($this->board->getWinner()) || $this->board->isFull()) {
                 $this->board->createEmptyBoard($inputBoardSize);
                 $boardData = $this->board->getBoard();
-                $this->storage->save('board-data', $boardData);
+                $this->storage->save($tableId, $boardData);
             }
         } else {
             $this->board->createEmptyBoard($inputBoardSize);
             $boardData = $this->board->getBoard();
-            $this->storage->save('board-data', $boardData);
+            $this->storage->save($tableId, $boardData);
         }
 
         return JsonResponseFactory::create($boardData, 200);
@@ -87,13 +88,14 @@ class BoardController
         //get parameters and validate it
         $inputCol = isset($request->getParsedBody()['colIndex']) ? (int)$request->getParsedBody()['colIndex'] : '';
         $inputRow = isset($request->getParsedBody()['rowIndex']) ? (int)$request->getParsedBody()['rowIndex'] : '';
+        $tableId = isset($request->getQueryParams()['table']) ? $request->getQueryParams()['table'] : 'default';
 
-        $boardData = $this->storage->load('board-data');
+        $boardData = $this->storage->load($tableId);
         $this->board->setBoard($boardData);
 
         try {
             $this->board->applyMove($inputRow, $inputCol, self::PLAYER_MARK);
-            $this->storage->save('board-data', $this->board->getBoard());
+            $this->storage->save($tableId, $this->board->getBoard());
         } catch (InvalidArgumentException $e) {
             $result = BoardController::getResultValue(false, $e->getMessage());
             $this->logger->error('Board::applyMove params:', ['inputRow' => $inputRow, 'inputCol' => $inputCol]);
@@ -112,7 +114,7 @@ class BoardController
                     $this->logger->debug('AIAssistant suggested move:', $move);
                 }
                 $this->board->applyMove($row, $col, self::AI_MARK);
-                $this->storage->save('board-data', $this->board->getBoard());
+                $this->storage->save($tableId, $this->board->getBoard());
                 $result = BoardController::getResultValue(true, ['row' => $row, 'col' => $col]);
             } catch (InvalidMoveException | InvalidArgumentException $e) {
                 $result = BoardController::getResultValue(false, $e->getMessage());
@@ -124,6 +126,13 @@ class BoardController
         return JsonResponseFactory::create($result, 200);
     }
 
+    /**
+     * getResultValue
+     *
+     * @param boolean $success
+     * @param mixed $data
+     * @return array
+     */
     private function getResultValue(bool $success, mixed $data): array
     {
         $winner = $this->board->getWinner();

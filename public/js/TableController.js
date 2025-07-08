@@ -33,7 +33,7 @@ export class TableController {
         movingData.append("colIndex", tdElement.dataset.col);
 
         this.statusBar.showLoading();
-        fetch(this.table.getTableApiUrl() + "/mark", {
+        fetch(this.table.getTableApiUrl() + "/mark?table="+this.table.getTableId(), {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -44,11 +44,12 @@ export class TableController {
         .then(json => {
             this.statusBar.hideLoading();
             if (json.winner !== "" && json.winner !== null && json.gameover) {
-                this.notifier.show('The ' + json.winner + ' player won!');
+                this.table.emit('aiMove', json.result);
+                this.onWin(json.winner);
             } else if(!json.success) {
                 this.notifier.show('Error: ' + json.result);
             } else if(json.gameover  && (json.winner == "" || json.winner == null)) {
-                this.notifier.show('The board is full! No winner.');
+                this.onDraw();
             }
             else {
                 this.table.emit('aiMove', json.result);
@@ -78,5 +79,23 @@ export class TableController {
             const td = this.table.getCell(parseInt(element.row), parseInt(element.col));
             td.style.backgroundColor = 'red';
         });
+    }
+
+    /**
+     * onWin
+     * it is called when the board has a winner
+     *
+     * @param {string} winner
+     */
+    onWin(winner) {
+        this.notifier.show('The ' + winner + ' player won!');
+    }
+
+    /**
+     * onDraw
+     * It is caled when the board has no winner but the board is full
+     */
+    onDraw() {
+        this.notifier.show('The board is full! No winner.');
     }
 }

@@ -39,6 +39,7 @@
     "scripts": {
         "test": "./vendor/bin/phpunit --configuration phpunit.xml",
         "phpcs": "./vendor/bin/phpcs --standard=PSR12 ./src",
-        "doc": "php phpDocumentor.phar -d ./src -t ./doc"
+        "doc": "php phpDocumentor.phar -d ./src -t ./doc",
+        "uml": "php ./vendor/distvan/php2plantuml/php2plantuml.php --source=./src --output=./doc"
     }
 }

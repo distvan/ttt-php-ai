@@ -57,6 +57,11 @@ class App\Http\Controllers\IndexController {
  + __invoke($request: ServerRequestInterface) : ResponseInterface
 }
 
+class App\Http\Controllers\UltimateController {
+ + __construct($view: View, $board: Board, $storage: Storage) : void
+ + __invoke($request: ServerRequestInterface) : ResponseInterface
+}
+
 class App\Infrastructure\Container\Container {
  # bindings : array
  # instances : array
